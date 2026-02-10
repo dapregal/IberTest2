@@ -13,9 +13,18 @@
 
 <style>
 *,*::before,*::after{box-sizing:border-box;}
-html,body{height:100%;margin:0;font-family:"Poppins",sans-serif;font-weight:300;line-height:1.5;color:#111;background:#fff;overflow-x:hidden;}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  font-weight:300;
+  line-height:1.5;
+  color:#111;
+  background:#fff;
+  overflow-x:hidden;
+}
 
-/* ---------- HEADER ---------- */
+/* HEADER */
 header{position:fixed;top:0;left:0;right:0;z-index:100;}
 .header-bar{
   width:100%;
@@ -23,12 +32,16 @@ header{position:fixed;top:0;left:0;right:0;z-index:100;}
   padding:6px 0;
   transition:background 0.4s ease;
 }
-.header-bar.scrolled{background:rgba(0,0,0,0.95);backdrop-filter:blur(5px);}
+.header-bar.scrolled{
+  background:rgba(0,0,0,0.95);
+  backdrop-filter:blur(5px);
+}
+
 .container{max-width:1200px;margin:0 auto;padding:0 20px;}
 nav{display:flex;align-items:center;justify-content:space-between;height:56px;}
 .logo img{height:16px;display:block;}
 
-/* ---------- NAV ---------- */
+/* NAV */
 .nav-links{
   display:flex;
   align-items:center;
@@ -52,9 +65,11 @@ nav{display:flex;align-items:center;justify-content:space-between;height:56px;}
   font-size:22px;
   color:#fff;
   cursor:pointer;
+  position:relative;
+  z-index:101;
 }
 
-/* DROPDOWN (no usado ahora, pero mantenido) */
+/* DROPDOWN */
 .dropdown{position:relative;}
 .dropdown-content{
   display:none;
@@ -79,9 +94,20 @@ nav{display:flex;align-items:center;justify-content:space-between;height:56px;}
   cursor:pointer;
 }
 
-/* ---------- HERO ---------- */
-.hero{position:relative;height:100vh;min-height:640px;overflow:hidden;}
-.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+/* HERO */
+.hero{
+  position:relative;
+  height:100vh;
+  min-height:640px;
+  overflow:hidden;
+}
+.hero video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 .overlay{
   position:absolute;
   inset:0;
@@ -91,28 +117,86 @@ nav{display:flex;align-items:center;justify-content:space-between;height:56px;}
   justify-content:center;
   text-align:center;
 }
-.hero-inner{max-width:900px;padding:0 20px;color:#fff;}
-.logo-hero img{max-width:20%;min-width:200px;margin-bottom:20px;}
-h1{font-size:clamp(32px,6vw,52px);margin-bottom:12px;font-weight:300;}
-.lead{font-size:17px;margin-bottom:20px;}
-.actions{display:flex;justify-content:center;gap:30px;margin-top:40px;flex-wrap:wrap;}
-.btn{padding:16px 44px;border-radius:10px;border:1.6px solid #fff;color:#fff;text-decoration:none;font-size:19px;min-width:170px;}
+.hero-inner{
+  max-width:900px;
+  padding:0 20px;
+  color:#fff;
+}
+.logo-hero img{
+  max-width:20%;
+  min-width:200px;
+  margin-bottom:20px;
+}
+h1{
+  font-size:clamp(32px,6vw,52px);
+  margin-bottom:12px;
+  font-weight:300;
+}
+.lead{
+  font-size:17px;
+  margin-bottom:20px;
+}
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:16px 44px;
+  border-radius:10px;
+  border:1.6px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  font-size:19px;
+  min-width:170px;
+}
 
-/* ---------- SECTIONS ---------- */
-.white-section{padding:100px 20px;text-align:center;}
-.white-section h2{font-size:clamp(26px,4vw,40px);margin-bottom:20px;font-weight:400;}
-.white-section p{max-width:850px;margin:0 auto 60px;font-size:16px;}
-.box-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;}
-.info-box{padding:30px 20px;border:1px solid rgba(0,0,0,0.1);border-radius:10px;background:#fafafa;}
+/* SECTIONS */
+.white-section{
+  padding:100px 20px;
+  text-align:center;
+}
+.white-section h2{
+  font-size:clamp(26px,4vw,40px);
+  margin-bottom:20px;
+  font-weight:400;
+}
+.white-section p{
+  max-width:850px;
+  margin:0 auto 60px;
+  font-size:16px;
+}
+.box-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+}
+.info-box{
+  padding:30px 20px;
+  border:1px solid rgba(0,0,0,0.1);
+  border-radius:10px;
+  background:#fafafa;
+}
 
-/* ---------- FOOTER ---------- */
-footer{background:#0b1220;color:#fff;padding-top:50px;}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-bottom:40px;}
+/* FOOTER */
+footer{
+  background:#0b1220;
+  color:#fff;
+  padding-top:50px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+  margin-bottom:40px;
+}
 .footer-logo img{height:38px;}
 .footer-social{display:flex;gap:14px;margin-top:8px;}
 .footer-legal{background:#000;padding:12px 20px;text-align:center;}
 
-/* ---------- COOKIES ---------- */
+/* COOKIES */
 .cookie-popup{
   position:fixed;
   bottom:20px;
@@ -128,60 +212,62 @@ footer{background:#0b1220;color:#fff;padding-top:50px;}
   max-width:90%;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 @media (max-width:900px){
-.menu-toggle{display:block;}
-.nav-links{
-  position:fixed;
-  top:0;
-  right:-100%;
-  height:100vh;
-  width:260px;
-  background:#0b1220;
-  flex-direction:column;
-  padding-top:90px;
-  gap:22px;
-  transition:0.35s;
-  z-index:999;
-}
-.nav-links.active{right:0;}
-.nav-links a{font-size:18px;padding:10px 20px;}
-.hero{min-height:560px;}
-.logo-hero img{max-width:55%;}
-.actions{flex-direction:column;gap:14px;}
-.white-section{padding:70px 20px;}
+  .menu-toggle{display:block;}
+  .nav-links{
+    position:fixed;
+    top:0;
+    right:-100%;
+    height:100vh;
+    width:260px;
+    background:#0b1220;
+    flex-direction:column;
+    padding-top:90px;
+    gap:22px;
+    transition:0.35s;
+    z-index:100;
+  }
+  .nav-links.active{right:0;}
+  .nav-links a{padding:10px 20px;font-size:18px;}
+  .close-menu{
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    font-size:28px;
+    color:#fff;
+    cursor:pointer;
+  }
+
+  .hero{min-height:560px;}
+  .logo-hero img{max-width:55%;}
+  .actions{flex-direction:column;gap:14px;}
+  .white-section{padding:70px 20px;}
 }
 </style>
 </head>
-
 <body>
 
 <header>
 <div class="header-bar" id="headerBar">
 <div class="container">
 <nav>
+  <div class="logo">
+    <a href="index.html"><img src="logoIBERsolo.png" alt="Iber Cutlery Logo"></a>
+  </div>
 
-<div class="logo">
-<a href="index.html"><img src="logoIBERsolo.png" alt="Iber Cutlery Logo"></a>
-</div>
+  <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
 
-<div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
-
-<div class="nav-links" id="navLinks">
-<a href="index.html">Home</a>
-<a href="meet.html">Meet Dart</a>
-<a href="services.html">Services</a>
-<a href="about.html">About Us</a>
-<a href="contact.html">Contact</a>
-<a href="catalogue.html" class="catalogue-btn">Catalogue</a>
-<div class="lang-wrapper">
-<select id="lang-switcher">
-<option value="en">EN</option>
-<option value="pt">PT</option>
-<option value="es">ES</option>
-</select>
-</div>
-</div>
+  <div class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="meetdart.html">Meet Dart</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="catalogue.html" class="catalogue-btn">Catalogue</a>
+    <div class="close-menu" id="closeMenu"><i class="fas fa-times"></i></div>
+  </div>
 
 </nav>
 </div>
@@ -209,18 +295,9 @@ footer{background:#0b1220;color:#fff;padding-top:50px;}
 <h2>Experience and Tradition</h2>
 <p>Iber Cutlery unites craftsmanship and technology to deliver the highest-quality cutlery. With decades of expertise, our products embody the perfect balance between innovation, design, and Portuguese tradition.</p>
 <div class="box-grid">
-<div class="info-box">
-<h3>Collections</h3>
-<p>A wide range of contemporary and classic designs tailored to different lifestyles and table settings.</p>
-</div>
-<div class="info-box">
-<h3>Finishes</h3>
-<p>From mirror to satin, brushed or coated — every finish is perfected for beauty, comfort, and durability.</p>
-</div>
-<div class="info-box">
-<h3>Sets</h3>
-<p>Elegant sets that combine precision, ergonomics, and visual harmony to complement every occasion.</p>
-</div>
+<div class="info-box"><h3>Collections</h3><p>A wide range of contemporary and classic designs tailored to different lifestyles and table settings.</p></div>
+<div class="info-box"><h3>Finishes</h3><p>From mirror to satin, brushed or coated — every finish is perfected for beauty, comfort, and durability.</p></div>
+<div class="info-box"><h3>Sets</h3><p>Elegant sets that combine precision, ergonomics, and visual harmony to complement every occasion.</p></div>
 </div>
 </section>
 
@@ -236,4 +313,70 @@ footer{background:#0b1220;color:#fff;padding-top:50px;}
 <div class="footer-about">Precision and tradition in cutlery manufacturing. Headquartered in Braga, Portugal.</div>
 </div>
 <div>
-<h3>C
+<h3>Contact</h3>
+<p>R. da Gandra 1782, 4805-537 Barco, Portugal</p>
+<p>+351 253 579 523</p>
+</div>
+<div>
+<h3>Follow Us</h3>
+<div class="footer-social">
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/ibercutlery/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+</div>
+<div style="margin-top:12px;"><a href="privacy.html" style="color:#fff;">Privacy Policy</a></div>
+</div>
+</div>
+<div class="footer-legal">
+<p>© <span id="copyright-year">2025</span> Iber Cutlery · All rights reserved</p>
+<img src="logos_2020.png" style="height:55px;cursor:pointer;" onclick="window.open('Ficha-do-Projeto-Iber.pdf','_blank')">
+</div>
+</footer>
+
+<div class="cookie-popup" id="cookiePopup" style="display:none;">
+<p>This website uses cookies to ensure you get the best experience on our website.</p>
+<button id="acceptCookies">Accept</button>
+</div>
+
+<script>
+document.getElementById("copyright-year").textContent=new Date().getFullYear();
+
+/* HEADER SCROLL */
+const headerBar=document.getElementById('headerBar');
+window.addEventListener('scroll',()=>{headerBar.classList.toggle('scrolled',window.scrollY>60);});
+
+/* MOBILE MENU */
+const toggle=document.getElementById('menuToggle');
+const nav=document.getElementById('navLinks');
+const closeBtn=document.getElementById('closeMenu');
+
+toggle.addEventListener('click',()=>{nav.classList.add('active');});
+closeBtn.addEventListener('click',()=>{nav.classList.remove('active');});
+document.addEventListener('click',(e)=>{
+  if(!nav.contains(e.target) && !toggle.contains(e.target)){
+    nav.classList.remove('active');
+  }
+});
+
+/* LANGUAGE */
+const switcher=document.getElementById('lang-switcher');
+const savedLang=localStorage.getItem('lang')||'en';
+switcher.value=savedLang;
+switcher.addEventListener('change',()=>{
+  localStorage.setItem('lang',switcher.value);
+  location.reload();
+});
+
+/* COOKIES */
+const cookiePopup=document.getElementById('cookiePopup');
+const acceptBtn=document.getElementById('acceptCookies');
+if(!localStorage.getItem('cookiesAccepted')) cookiePopup.style.display='flex';
+acceptBtn.addEventListener('click',()=>{
+  localStorage.setItem('cookiesAccepted','true');
+  cookiePopup.style.display='none';
+});
+</script>
+
+</body>
+</html>
