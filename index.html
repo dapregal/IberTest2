@@ -68,6 +68,16 @@ nav{display:flex;align-items:center;justify-content:space-between;height:56px;}
   position:relative;
   z-index:101;
 }
+.close-menu{
+  display:none;
+  font-size:28px;
+  color:#fff;
+  cursor:pointer;
+  position:absolute;
+  top:20px;
+  right:20px;
+  z-index:102;
+}
 
 /* DROPDOWN */
 .dropdown{position:relative;}
@@ -223,7 +233,7 @@ footer{
     width:260px;
     background:#0b1220;
     flex-direction:column;
-    padding-top:90px;
+    padding-top:70px;
     gap:22px;
     transition:0.35s;
     z-index:100;
@@ -231,16 +241,8 @@ footer{
   .nav-links.active{right:0;}
   .nav-links a{padding:10px 20px;font-size:18px;}
 
-  /* X CIERRE ARRIBA */
-  .close-menu{
-    position:absolute;
-    top:20px;
-    right:20px;
-    font-size:28px;
-    color:#fff;
-    cursor:pointer;
-  }
-
+  .close-menu{display:block;}
+  
   .hero{min-height:560px;}
   .logo-hero img{max-width:55%;}
   .actions{flex-direction:column;gap:14px;}
@@ -350,11 +352,18 @@ const toggle=document.getElementById('menuToggle');
 const nav=document.getElementById('navLinks');
 const closeBtn=document.getElementById('closeMenu');
 
-toggle.addEventListener('click',()=>{nav.classList.add('active');});
-closeBtn.addEventListener('click',()=>{nav.classList.remove('active');});
+toggle.addEventListener('click',()=>{
+  nav.classList.add('active');
+  toggle.style.display='none';
+});
+closeBtn.addEventListener('click',()=>{
+  nav.classList.remove('active');
+  toggle.style.display='block';
+});
 document.addEventListener('click',(e)=>{
   if(!nav.contains(e.target) && !toggle.contains(e.target)){
     nav.classList.remove('active');
+    toggle.style.display='block';
   }
 });
 
