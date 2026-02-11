@@ -59,49 +59,14 @@ nav{display:flex;align-items:center;justify-content:space-between;height:56px;}
   border-radius:8px;
 }
 
-/* MOBILE MENU BUTTON */
-.menu-toggle{
-  display:none;
-  font-size:22px;
-  color:#fff;
-  cursor:pointer;
-  position:relative;
-  z-index:101;
-}
+/* MOBILE BUTTONS (hidden by default) */
+.menu-toggle,
 .close-menu{
   display:none;
-  font-size:28px;
+  font-size:24px;
   color:#fff;
   cursor:pointer;
-  position:absolute;
-  top:20px;
-  right:20px;
-  z-index:102;
-}
-
-/* DROPDOWN */
-.dropdown{position:relative;}
-.dropdown-content{
-  display:none;
-  position:absolute;
-  top:120%;
-  left:0;
-  background:rgba(0,0,0,0.9);
-  border-radius:6px;
-  min-width:180px;
-  padding:10px 0;
-}
-.dropdown:hover .dropdown-content{display:block;}
-
-/* LANGUAGE */
-.lang-wrapper{position:relative;}
-#lang-switcher{
-  background:transparent;
-  border:none;
-  color:#fff;
-  font-family:"Poppins",sans-serif;
-  font-size:15px;
-  cursor:pointer;
+  z-index:101;
 }
 
 /* HERO */
@@ -224,7 +189,9 @@ footer{
 
 /* MOBILE */
 @media (max-width:900px){
+
   .menu-toggle{display:block;}
+
   .nav-links{
     position:fixed;
     top:0;
@@ -233,21 +200,41 @@ footer{
     width:260px;
     background:#0b1220;
     flex-direction:column;
-    padding-top:70px;
+    padding-top:80px;
     gap:22px;
     transition:0.35s;
     z-index:100;
   }
-  .nav-links.active{right:0;}
-  .nav-links a{padding:10px 20px;font-size:18px;}
 
-  .close-menu{display:block;}
-  
+  .nav-links.active{right:0;}
+
+  .nav-links a{
+    padding:10px 20px;
+    font-size:18px;
+  }
+
+  /* CLOSE X TOP */
+  .close-menu{
+    position:absolute;
+    top:20px;
+    right:20px;
+    display:block;
+  }
+
   .hero{min-height:560px;}
   .logo-hero img{max-width:55%;}
   .actions{flex-direction:column;gap:14px;}
   .white-section{padding:70px 20px;}
 }
+
+/* DESKTOP SAFETY */
+@media (min-width:901px){
+  .menu-toggle,
+  .close-menu{
+    display:none !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -256,21 +243,29 @@ footer{
 <div class="header-bar" id="headerBar">
 <div class="container">
 <nav>
-  <div class="logo">
-    <a href="index.html"><img src="logoIBERsolo.png" alt="Iber Cutlery Logo"></a>
-  </div>
 
-  <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
+<div class="logo">
+<a href="index.html"><img src="logoIBERsolo.png" alt="Iber Cutlery Logo"></a>
+</div>
 
-  <div class="nav-links" id="navLinks">
-    <a href="index.html">Home</a>
-    <a href="meetdart.html">Meet Dart</a>
-    <a href="services.html">Services</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-    <a href="catalogue.html" class="catalogue-btn">Catalogue</a>
-    <div class="close-menu" id="closeMenu"><i class="fas fa-times"></i></div>
-  </div>
+<div class="menu-toggle" id="menuToggle">
+<i class="fas fa-bars"></i>
+</div>
+
+<div class="nav-links" id="navLinks">
+
+<div class="close-menu" id="closeMenu">
+<i class="fas fa-times"></i>
+</div>
+
+<a href="index.html">Home</a>
+<a href="meetdart.html">Meet Dart</a>
+<a href="services.html">Services</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="catalogue.html" class="catalogue-btn">Catalogue</a>
+
+</div>
 
 </nav>
 </div>
@@ -296,17 +291,18 @@ footer{
 
 <section class="white-section">
 <h2>Experience and Tradition</h2>
-<p>Iber Cutlery unites craftsmanship and technology to deliver the highest-quality cutlery. With decades of expertise, our products embody the perfect balance between innovation, design, and Portuguese tradition.</p>
+<p>Iber Cutlery unites craftsmanship and technology to deliver the highest-quality cutlery...</p>
+
 <div class="box-grid">
-<div class="info-box"><h3>Collections</h3><p>A wide range of contemporary and classic designs tailored to different lifestyles and table settings.</p></div>
-<div class="info-box"><h3>Finishes</h3><p>From mirror to satin, brushed or coated — every finish is perfected for beauty, comfort, and durability.</p></div>
-<div class="info-box"><h3>Sets</h3><p>Elegant sets that combine precision, ergonomics, and visual harmony to complement every occasion.</p></div>
+<div class="info-box"><h3>Collections</h3><p>A wide range...</p></div>
+<div class="info-box"><h3>Finishes</h3><p>From mirror to satin...</p></div>
+<div class="info-box"><h3>Sets</h3><p>Elegant sets...</p></div>
 </div>
 </section>
 
 <section class="white-section">
 <h2>Made in Portugal, Undeniable on Your Table</h2>
-<p>Rooted in the esteemed Portuguese tradition, we export the Lusitanian identity worldwide, standing as an undeniable reference on any table. We present the finest solutions in terms of usability and ergonomics, combining functionality and refinement in details through the constant pursuit of innovative designs that cater to various lifestyles, whether dynamic and avant-garde or luxurious and exclusive.</p>
+<p>Rooted in the esteemed Portuguese tradition...</p>
 </section>
 
 <footer>
@@ -315,11 +311,13 @@ footer{
 <div class="footer-logo"><img src="logoIBER.png" alt="Iber Cutlery"></div>
 <div class="footer-about">Precision and tradition in cutlery manufacturing. Headquartered in Braga, Portugal.</div>
 </div>
+
 <div>
 <h3>Contact</h3>
 <p>R. da Gandra 1782, 4805-537 Barco, Portugal</p>
 <p>+351 253 579 523</p>
 </div>
+
 <div>
 <h3>Follow Us</h3>
 <div class="footer-social">
@@ -329,6 +327,7 @@ footer{
 <div style="margin-top:12px;"><a href="privacy.html" style="color:#fff;">Privacy Policy</a></div>
 </div>
 </div>
+
 <div class="footer-legal">
 <p>© <span id="copyright-year">2025</span> Iber Cutlery · All rights reserved</p>
 <img src="logos_2020.png" style="height:55px;cursor:pointer;" onclick="window.open('Ficha-do-Projeto-Iber.pdf','_blank')">
@@ -341,6 +340,7 @@ footer{
 </div>
 
 <script>
+
 document.getElementById("copyright-year").textContent=new Date().getFullYear();
 
 /* HEADER SCROLL */
@@ -352,28 +352,38 @@ const toggle=document.getElementById('menuToggle');
 const nav=document.getElementById('navLinks');
 const closeBtn=document.getElementById('closeMenu');
 
+function isMobile(){
+  return window.innerWidth<=900;
+}
+
 toggle.addEventListener('click',()=>{
+  if(!isMobile()) return;
   nav.classList.add('active');
   toggle.style.display='none';
 });
+
 closeBtn.addEventListener('click',()=>{
+  if(!isMobile()) return;
   nav.classList.remove('active');
   toggle.style.display='block';
 });
+
+/* Prevent desktop artifacts on resize */
+window.addEventListener('resize',()=>{
+  if(!isMobile()){
+    nav.classList.remove('active');
+    toggle.style.display='';
+  }
+});
+
+/* click outside */
 document.addEventListener('click',(e)=>{
+  if(!isMobile()) return;
+
   if(!nav.contains(e.target) && !toggle.contains(e.target)){
     nav.classList.remove('active');
     toggle.style.display='block';
   }
-});
-
-/* LANGUAGE */
-const switcher=document.getElementById('lang-switcher');
-const savedLang=localStorage.getItem('lang')||'en';
-switcher.value=savedLang;
-switcher.addEventListener('change',()=>{
-  localStorage.setItem('lang',switcher.value);
-  location.reload();
 });
 
 /* COOKIES */
@@ -384,6 +394,7 @@ acceptBtn.addEventListener('click',()=>{
   localStorage.setItem('cookiesAccepted','true');
   cookiePopup.style.display='none';
 });
+
 </script>
 
 </body>
