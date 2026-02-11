@@ -197,17 +197,21 @@ footer{
 
 .cookie-buttons{
   display:flex;
-  gap:12px;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
 }
 
 .cookie-btn{
   border:none;
-  padding:10px 18px;
-  border-radius:8px;
+  padding:8px 16px;
+  border-radius:7px;
   cursor:pointer;
   font-family:"Poppins",sans-serif;
-  font-size:14px;
+  font-size:13px;
   transition:.25s;
+  width:auto;        /* ← evita que se expandan */
+  min-width:110px;   /* tamaño elegante */
 }
 
 .cookie-accept{
@@ -278,7 +282,9 @@ footer{
 
   .cookie-buttons{
     width:100%;
+    justify-content:space-between;
   }
+
 
   .cookie-btn{
     flex:1;
@@ -494,4 +500,5 @@ rejectBtn.addEventListener('click',()=>{
 
 </body>
 </html>
+
 
