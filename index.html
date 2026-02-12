@@ -53,6 +53,120 @@ nav{display:flex;align-items:center;justify-content:space-between;height:56px;}
   font-weight:400;
   font-size:15px;
 }
+
+
+
+
+
+/* LANGUAGE SELECTOR DESKTOP */
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.language-selector .lang-btn {
+  background: transparent;
+  border: 1.6px solid #fff;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.language-selector .lang-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #0b1220;
+  border: 1px solid #fff;
+  border-radius: 6px;
+  margin-top: 6px;
+  list-style: none;
+  padding: 8px 0;
+  min-width: 70px;
+  z-index: 200;
+}
+
+.language-selector .lang-dropdown li a {
+  display: block;
+  padding: 6px 12px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.language-selector .lang-dropdown li a:hover {
+  background: rgba(255,255,255,0.15);
+}
+
+/* Mostrar dropdown al hover en desktop */
+@media (min-width:901px){
+  .language-selector:hover .lang-dropdown {
+    display: block;
+  }
+}
+
+/* ICONOS RRSS NAV */
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 12px; /* separación con idioma */
+}
+
+.nav-social a i {
+  color: #fff;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-social a:hover i {
+  color: #888;
+}
+
+/* MÓVIL: idioma al final del menú */
+@media (max-width:700px){
+  .language-selector {
+    display: block;
+    margin: 20px 0 10px 0;
+  }
+
+  .language-selector .lang-btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .language-selector .lang-dropdown {
+    position: static;
+    border: none;
+    background: transparent;
+    padding: 0;
+    margin-top: 0;
+  }
+
+  .language-selector .lang-dropdown li a {
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  /* Ocultar iconos RRSS en el header de móvil si quieres manejarlos abajo */
+  .nav-social {
+    margin: 10px 0 20px 0;
+  }
+}
+
+
+
+
+
+
+
+
 .catalogue-btn{
   border:1.6px solid #fff;
   padding:6px 16px;
@@ -341,21 +455,40 @@ footer{
 <div class="menu-toggle" id="menuToggle">
 <i class="fas fa-bars"></i>
 </div>
+  <!-- MERDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
 
 <div class="nav-links" id="navLinks">
 
-<div class="close-menu" id="closeMenu">
-<i class="fas fa-times"></i>
+  <div class="close-menu" id="closeMenu">
+    <i class="fas fa-times"></i>
+  </div>
+
+  <a href="index.html">Home</a>
+  <a href="meetdart.html">Meet Dart</a>
+  <a href="services.html">Services</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+  <a href="catalogue.html" class="catalogue-btn">Catalogue</a>
+
+  <!-- NUEVO SELECTOR DE IDIOMA -->
+  <div class="language-selector">
+    <button class="lang-btn">EN <i class="fas fa-chevron-down"></i></button>
+    <ul class="lang-dropdown">
+      <li><a href="?lang=en">EN</a></li>
+      <li><a href="?lang=pt">PT</a></li>
+      <li><a href="?lang=es">ES</a></li>
+    </ul>
+  </div>
+
+  <!-- ICONOS RRSS DESKTOP -->
+  <div class="nav-social">
+    <a href="https://www.facebook.com/ibercutlery" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/ibercutlery/" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+
 </div>
 
-<a href="index.html">Home</a>
-<a href="meetdart.html">Meet Dart</a>
-<a href="services.html">Services</a>
-<a href="about.html">About Us</a>
-<a href="contact.html">Contact</a>
-<a href="catalogue.html" class="catalogue-btn">Catalogue</a>
 
-</div>
 
 </nav>
 </div>
@@ -493,6 +626,22 @@ rejectBtn.addEventListener('click',()=>{
   localStorage.setItem('cookieChoice','rejected');
   cookiePopup.style.display='none';
 });
+
+
+// TOGGLE LANGUAGE DROPDOWN MOBILE
+document.querySelectorAll('.language-selector .lang-btn').forEach(btn=>{
+  btn.addEventListener('click', e=>{
+    const dropdown = btn.nextElementSibling;
+    if(dropdown.style.display === 'block'){
+      dropdown.style.display = 'none';
+    } else {
+      dropdown.style.display = 'block';
+    }
+  });
+});
+
+
+
 
 </script>
 
