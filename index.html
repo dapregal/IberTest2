@@ -59,7 +59,7 @@ nav{display:flex;align-items:center;justify-content:space-between;height:56px;}
   border-radius:8px;
 }
 
-/* MOBILE BUTTONS (hidden by default) */
+/* MOBILE MENU BUTTONS */
 .menu-toggle,
 .close-menu{
   display:none;
@@ -127,6 +127,15 @@ h1{
   font-size:19px;
   min-width:170px;
 }
+/* HOVER PROFESIONAL PARA BOTONES GRANDES DEL HERO */
+.btn:hover {
+  background: rgba(255,255,255,0.15); /* sutil overlay blanco */
+  border-color: #fff;                 /* borde blanco */
+  color: #fff;                        /* mantiene texto blanco */
+  transform: translateY(-2px);        /* efecto ligero de elevación */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.25); /* sombra elegante */
+  transition: all 0.3s ease;
+}
 
 /* SECTIONS */
 .white-section{
@@ -160,6 +169,7 @@ footer{
   background:#0b1220;
   color:#fff;
   padding-top:50px;
+  font-size:14px; /* tamaño base footer más pequeño */
 }
 .footer-grid{
   display:grid;
@@ -168,10 +178,22 @@ footer{
   margin-bottom:40px;
 }
 .footer-logo img{height:38px;}
-.footer-social{display:flex;gap:14px;margin-top:8px;}
-.footer-legal{background:#000;padding:12px 20px;text-align:center;}
+.footer-social{display:flex;gap:14px;margin-top:5px;}
+.footer-social a i {
+  color: #fff;          /* iconos blancos */
+  font-size: 20px;      /* tamaño ligeramente más grande */
+  transition: color 0.3s ease;
+}
+.footer-social a:hover i {
+  color: #888888;       /* efecto hover elegante */
+}.footer-legal{
+  background:#000;
+  padding:12px 20px;
+  text-align:center;
+  font-size:13px; /* un poco más pequeño */
+}
 
-/* COOKIES PROFESSIONAL BAR */
+/* PROFESSIONAL COOKIE BANNER */
 .cookie-popup{
   position:fixed;
   bottom:0;
@@ -188,32 +210,32 @@ footer{
   z-index:9999;
   box-shadow:0 -6px 25px rgba(0,0,0,.25);
   animation:slideUp .35s ease;
+  font-size:14px;
 }
 
 .cookie-text{
   max-width:900px;
-  font-size:14px;
+  line-height:1.5;
 }
 
 .cookie-buttons{
   display:flex;
-  gap:10px;
+  gap:12px;
   align-items:center;
   justify-content:center;
+  flex-wrap:wrap;
 }
 
-
-/* BOTONES DESKTOP (más pequeños) */
 .cookie-btn{
   border:none;
-  padding:8px 16px;
+  padding:8px 18px;
   border-radius:7px;
   cursor:pointer;
   font-family:"Poppins",sans-serif;
   font-size:13px;
   transition:.25s;
-  width:auto;        /* ← evita que se expandan */
-  min-width:110px;   /* tamaño elegante */
+  width:auto;
+  min-width:110px;
 }
 
 .cookie-accept{
@@ -221,29 +243,22 @@ footer{
   color:#0b1220;
   font-weight:500;
 }
-
 .cookie-accept:hover{
   background:#e6e6e6;
 }
-
 .cookie-reject{
   background:transparent;
   color:#fff;
   border:1px solid rgba(255,255,255,.4);
 }
-
 .cookie-reject:hover{
   background:rgba(255,255,255,.08);
 }
-
-
-
 
 /* MOBILE */
 @media (max-width:700px){
 
   .menu-toggle{display:block;}
-
   .nav-links{
     position:fixed;
     top:0;
@@ -257,45 +272,38 @@ footer{
     transition:0.35s;
     z-index:100;
   }
-
   .nav-links.active{right:0;}
-
   .nav-links a{
     padding:10px 20px;
-    font-size:18px;
+    font-size:14px;
   }
-
-  /* CLOSE X TOP */
   .close-menu{
     position:absolute;
     top:20px;
     right:20px;
     display:block;
   }
-
   .hero{min-height:560px;}
   .logo-hero img{max-width:55%;}
   .actions{flex-direction:column;gap:14px;}
   .white-section{padding:70px 20px;}
 
+  /* MOBILE COOKIE BANNER */
   .cookie-popup{
     flex-direction:column;
     align-items:flex-start;
-    padding:18px;
+    padding:18px 20px;
   }
-
-.cookie-buttons{
+  .cookie-buttons{
     width:100%;
     justify-content:space-between;
   }
-
-    .cookie-btn{
+  .cookie-btn{
     flex:1;
     text-align:center;
     font-size:14px;
     padding:12px;
   }
-  
 }
 
 @keyframes slideUp{
@@ -361,7 +369,7 @@ footer{
 <div class="overlay">
 <div class="hero-inner">
 <div class="logo-hero"><img src="logoIBER-blanco.png" alt="Iber Cutlery Logo"></div>
-<h1>Precision and Tradition in Cutlery Manufacturing</h1>
+<h1>Cutlery Manufacturing Solutions</h1>
 <p class="lead">Engineering excellence from Portugal to the world.</p>
 <div class="actions">
 <a href="catalogue.html" class="btn">Catalogue</a>
@@ -373,24 +381,24 @@ footer{
 
 <section class="white-section">
 <h2>Experience and Tradition</h2>
-<p>Iber Cutlery unites craftsmanship and technology to deliver the highest-quality cutlery...</p>
-
+<p>Iber Cutlery unites craftsmanship and technology to deliver the highest-quality cutlery. With decades of expertise, our products embody the perfect balance between innovation, design, and Portuguese tradition.</p>
 <div class="box-grid">
-<div class="info-box"><h3>Collections</h3><p>A wide range...</p></div>
-<div class="info-box"><h3>Finishes</h3><p>From mirror to satin...</p></div>
-<div class="info-box"><h3>Sets</h3><p>Elegant sets...</p></div>
+<div class="info-box"><h3>Collections</h3><p>A wide range of contemporary and classic designs tailored to different lifestyles and table settings.</p></div>
+<div class="info-box"><h3>Finishes</h3><p>From mirror to satin, brushed or coated — every finish is perfected for beauty, comfort, and durability.</p></div>
+<div class="info-box"><h3>Sets</h3><p>Elegant sets that combine precision, ergonomics, and visual harmony to complement every occasion.</p></div>
 </div>
 </section>
 
 <section class="white-section">
 <h2>Made in Portugal, Undeniable on Your Table</h2>
-<p>Rooted in the esteemed Portuguese tradition...</p>
+<p>Rooted in the esteemed Portuguese tradition, we export the Lusitanian identity worldwide, standing as an undeniable reference on any table. We present the finest solutions in terms of usability and ergonomics, combining functionality and refinement in details through the constant pursuit of innovative designs that cater to various lifestyles, whether dynamic and avant-garde or luxurious and exclusive.</p>
 </section>
 
 <footer>
 <div class="container footer-grid">
 <div>
-<div class="footer-logo"><img src="logoIBER.png" alt="Iber Cutlery"></div>
+  <br>
+<div class="footer-logo"><img src="logoIBER.png" alt="Iber Cutlery"></div> <br>
 <div class="footer-about">Precision and tradition in cutlery manufacturing. Headquartered in Braga, Portugal.</div>
 </div>
 
@@ -417,12 +425,14 @@ footer{
 </footer>
 
 <div class="cookie-popup" id="cookiePopup" style="display:none;">
-<p>This website uses cookies to ensure you get the best experience on our website.</p>
-<button id="acceptCookies">Accept</button>
+<div class="cookie-text">We use cookies to ensure you get the best experience on our website. By continuing to browse, you accept our <a href="privacy.html" style="color:#fff;text-decoration:underline;">Privacy Policy</a>.</div>
+<div class="cookie-buttons">
+<button class="cookie-btn cookie-accept" id="acceptCookies">Accept</button>
+<button class="cookie-btn cookie-reject" id="rejectCookies">Decline</button>
+</div>
 </div>
 
 <script>
-
 document.getElementById("copyright-year").textContent=new Date().getFullYear();
 
 /* HEADER SCROLL */
@@ -434,9 +444,7 @@ const toggle=document.getElementById('menuToggle');
 const nav=document.getElementById('navLinks');
 const closeBtn=document.getElementById('closeMenu');
 
-function isMobile(){
-  return window.innerWidth<=900;
-}
+function isMobile(){return window.innerWidth<=900;}
 
 toggle.addEventListener('click',()=>{
   if(!isMobile()) return;
@@ -458,17 +466,14 @@ window.addEventListener('resize',()=>{
   }
 });
 
-/* click outside */
+/* click outside mobile menu */
 document.addEventListener('click',(e)=>{
   if(!isMobile()) return;
-
   if(!nav.contains(e.target) && !toggle.contains(e.target)){
     nav.classList.remove('active');
     toggle.style.display='block';
   }
 });
-
-
 
 /* COOKIES */
 const cookiePopup=document.getElementById('cookiePopup');
