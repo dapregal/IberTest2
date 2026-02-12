@@ -373,6 +373,36 @@ footer{
 @media (max-width:700px){
 
   .menu-toggle{display:block;}
+
+/* NAV LINKS MÓVIL: alineación derecha */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* todo a la derecha */
+  gap: 22px;
+}
+
+/* IDIOMAS MÓVIL: botones independientes en fila */
+.language-selector-mobile {
+  display: flex;
+  gap: 12px;
+  margin: 20px 20px 10px 0; /* margen superior y derecha */
+}
+
+.language-selector-mobile .lang-mobile-btn {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  border: 1.6px solid #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.language-selector-mobile .lang-mobile-btn:hover {
+  background: rgba(255,255,255,0.15);
+}
+
   .nav-links{
     position:fixed;
     top:0;
@@ -388,8 +418,9 @@ footer{
   }
   .nav-links.active{right:0;}
   .nav-links a{
-    padding:20px 20px;
+    padding:5px 20px;
     font-size:16px;
+
   }
   .close-menu{
     position:absolute;
@@ -471,14 +502,11 @@ footer{
   <a href="catalogue.html" class="catalogue-btn">Catalogue</a>
 
   <!-- NUEVO SELECTOR DE IDIOMA -->
-  <div class="language-selector">
-    <button class="lang-btn">EN <i class="fas fa-chevron-down"></i></button>
-    <ul class="lang-dropdown">
-      <li><a href="?lang=en">EN</a></li>
-      <li><a href="?lang=pt">PT</a></li>
-      <li><a href="?lang=es">ES</a></li>
-    </ul>
-  </div>
+  <div class="language-selector-mobile">
+  <a href="?lang=en" class="lang-mobile-btn">EN</a>
+  <a href="?lang=pt" class="lang-mobile-btn">PT</a>
+  <a href="?lang=es" class="lang-mobile-btn">ES</a>
+</div>
 
   <!-- ICONOS RRSS DESKTOP -->
   <div class="nav-social">
@@ -628,17 +656,7 @@ rejectBtn.addEventListener('click',()=>{
 });
 
 
-// TOGGLE LANGUAGE DROPDOWN MOBILE
-document.querySelectorAll('.language-selector .lang-btn').forEach(btn=>{
-  btn.addEventListener('click', e=>{
-    const dropdown = btn.nextElementSibling;
-    if(dropdown.style.display === 'block'){
-      dropdown.style.display = 'none';
-    } else {
-      dropdown.style.display = 'block';
-    }
-  });
-});
+
 
 
 
