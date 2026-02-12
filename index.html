@@ -1,260 +1,495 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Iber Cutlery — Meet Us | Made in Portugal</title>
-  <meta name="description" content="Meet Iber Cutlery — a Portuguese cutlery manufacturer combining precision, technology, and tradition to create world-class products." />
-  <meta name="theme-color" content="#0b1220" />
-  <link rel="icon" href="/favicon.ico" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Iber Cutlery — Precision & Tradition | Made in Portugal</title>
+<meta name="description" content="Iber Cutlery — Portuguese cutlery manufacturer. Precision engineering, handcrafted finishes and industrial production. B2B catalog and corporate information."/>
+<meta name="theme-color" content="#0b1220"/>
+<link rel="icon" href="/favicon.ico"/>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <style>
-    *,*::before,*::after{box-sizing:border-box;}
-    html,body{height:100%;margin:0;font-family:"Poppins",sans-serif;font-weight:300;line-height:1.5;color:#111;background:#fff;}
+<style>
+*,*::before,*::after{box-sizing:border-box;}
+html,body{
+  height:100%;
+  margin:0;
+  font-family:"Poppins",sans-serif;
+  font-weight:300;
+  line-height:1.5;
+  color:#111;
+  background:#fff;
+  overflow-x:hidden;
+}
 
-    /* ---------- HEADER ---------- */
-    header{position:fixed;top:0;left:0;right:0;z-index:100;}
-    .header-bar{
-      width:100%;
-      background:linear-gradient(to bottom,rgba(0,0,0,0.6)0%,rgba(0,0,0,0.3)60%,rgba(0,0,0,0)100%);
-      padding:6px 0;
-      transition:background 0.4s ease;
-    }
-    .header-bar.scrolled{background:rgba(0,0,0,0.95);backdrop-filter:blur(5px);}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px;}
-    nav{display:flex;align-items:center;justify-content:space-between;height:52px;}
-    .logo a{display:inline-block;}
-    .logo img{height:16px;width:auto;display:block;}
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:100;}
+.header-bar{
+  width:100%;
+  background:linear-gradient(to bottom,rgba(0,0,0,0.6)0%,rgba(0,0,0,0.3)60%,rgba(0,0,0,0)100%);
+  padding:6px 0;
+  transition:background 0.4s ease;
+}
+.header-bar.scrolled{
+  background:rgba(0,0,0,0.95);
+  backdrop-filter:blur(5px);
+}
 
-    /* ---------- NAVIGATION ---------- */
-    .nav-links{display:flex;align-items:center;gap:26px;}
-    .nav-links a{
-      color:#fff;text-decoration:none;font-weight:400;
-      transition:opacity 0.3s ease;font-size:15px;position:relative;
-    }
-    .nav-links a:hover{opacity:0.75;}
-    .dropdown{position:relative;}
-    .dropdown > a::after{content:" ▾";font-size:11px;margin-left:4px;opacity:0.8;}
-    .dropdown-content{
-      display:none;position:absolute;top:120%;left:0;background:rgba(0,0,0,0.9);
-      border-radius:6px;min-width:180px;box-shadow:0 6px 16px rgba(0,0,0,0.2);padding:10px 0;z-index:999;
-    }
-    .dropdown-content a{
-      display:block;padding:10px 18px;color:#fff;text-decoration:none;
-      font-size:14px;font-weight:300;transition:background 0.3s ease;
-    }
-    .dropdown-content a:hover{background:rgba(255,255,255,0.1);}
-    .dropdown:hover .dropdown-content{display:block;animation:fadeIn 0.25s ease forwards;}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(-5px);}to{opacity:1;transform:translateY(0);}}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+nav{display:flex;align-items:center;justify-content:space-between;height:56px;}
+.logo img{height:16px;display:block;}
 
-    .catalogue-btn{
-      border:1.6px solid #fff;padding:6px 16px;border-radius:8px;text-decoration:none;
-      font-size:15px;font-weight:400;transition:all 0.3s ease;color:#fff;
-    }
-    .catalogue-btn:hover{background:rgba(255,255,255,0.12);transform:translateY(-2px);}
+/* NAV */
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:26px;
+}
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:400;
+  font-size:15px;
+}
+.catalogue-btn{
+  border:1.6px solid #fff;
+  padding:6px 16px;
+  border-radius:8px;
+}
 
-    /* Language */
-    .lang-wrapper{position:relative;display:inline-block;}
-    #lang-switcher{
-      background:transparent;border:none;color:#fff;font-weight:400;
-      font-family:"Poppins",sans-serif;font-size:15px;padding-right:12px;appearance:none;cursor:pointer;
-    }
-    .lang-wrapper::after{
-      content:"▾";position:absolute;right:0;top:50%;transform:translateY(-50%);
-      pointer-events:none;color:#fff;font-size:11px;
-    }
-    #lang-switcher option{background:#0b1220;color:#fff;font-size:15px;padding:8px;border:none;}
+/* MOBILE BUTTONS (hidden by default) */
+.menu-toggle,
+.close-menu{
+  display:none;
+  font-size:24px;
+  color:#fff;
+  cursor:pointer;
+  z-index:101;
+}
 
-    /* ---------- HERO ---------- */
-    .hero{position:relative;height:100vh;min-height:640px;overflow:hidden;}
-    .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
-    .hero .overlay{
-      position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,18,32,0.35),rgba(11,18,32,0.6));
-      display:flex;align-items:center;justify-content:center;text-align:center;flex-direction:column;
-    }
-    .hero .hero-inner{max-width:900px;margin:0 auto;padding:0 20px;color:#fff;}
-    .hero .logo-hero img{max-width:22%;min-width:230px;margin:0 auto 20px;display:block;}
-    h1{font-size:clamp(32px,6vw,52px);margin:0 0 12px;line-height:1.1;font-weight:300;}
-    p.lead{font-size:17px;opacity:0.95;margin:0 0 20px;font-weight:300;}
+/* HERO */
+.hero{
+  position:relative;
+  height:100vh;
+  min-height:640px;
+  overflow:hidden;
+}
+.hero video{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(11,18,32,0.35),rgba(11,18,32,0.6));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+.hero-inner{
+  max-width:900px;
+  padding:0 20px;
+  color:#fff;
+}
+.logo-hero img{
+  max-width:20%;
+  min-width:200px;
+  margin-bottom:20px;
+}
+h1{
+  font-size:clamp(32px,6vw,52px);
+  margin-bottom:12px;
+  font-weight:300;
+}
+.lead{
+  font-size:17px;
+  margin-bottom:20px;
+}
+.actions{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin-top:40px;
+  flex-wrap:wrap;
+}
+.btn{
+  padding:16px 44px;
+  border-radius:10px;
+  border:1.6px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  font-size:19px;
+  min-width:170px;
+}
 
-    /* ---------- CONTENT ---------- */
-    section.white-section{
-      background:#fff;color:#111;padding:100px 20px;text-align:center;
-    }
-    section.white-section h2{
-      font-size:clamp(26px,4vw,40px);margin-bottom:20px;font-weight:400;letter-spacing:0.5px;
-    }
-    section.white-section p{
-      max-width:850px;margin:0 auto 40px;font-size:16px;line-height:1.8;opacity:0.85;
-    }
-    .team-grid{
-      display:flex;flex-wrap:wrap;justify-content:center;gap:40px;margin-top:60px;
-    }
-    .member{
-      width:260px;text-align:center;
-    }
-    .member img{
-      width:100%;border-radius:10px;object-fit:cover;height:300px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    }
-    .member h3{margin:14px 0 6px;font-weight:400;font-size:17px;}
-    .member p{font-size:14px;opacity:0.8;margin:0;}
+/* SECTIONS */
+.white-section{
+  padding:100px 20px;
+  text-align:center;
+}
+.white-section h2{
+  font-size:clamp(26px,4vw,40px);
+  margin-bottom:20px;
+  font-weight:400;
+}
+.white-section p{
+  max-width:850px;
+  margin:0 auto 60px;
+  font-size:16px;
+}
+.box-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:30px;
+}
+.info-box{
+  padding:30px 20px;
+  border:1px solid rgba(0,0,0,0.1);
+  border-radius:10px;
+  background:#fafafa;
+}
 
-    /* ---------- FOOTER ---------- */
-    footer{background:#0b1220;color:#fff;padding:50px 0 0;font-size:14px;}
-    .footer-grid{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:40px;margin-bottom:40px;}
-    .footer-col{flex:1;min-width:220px;}
-    .footer-col h3{font-weight:600;font-size:15px;text-transform:uppercase;margin-bottom:12px;letter-spacing:0.5px;color:#fff;}
-    .footer-logo img{height:38px;margin-bottom:10px;opacity:0.95;}
-    .footer-about{font-size:13px;line-height:1.6;opacity:0.9;}
-    .footer-contact p{font-size:13px;line-height:1.8;margin:4px 0;opacity:0.9;}
-    .footer-social{display:flex;gap:14px;margin-top:8px;}
-    .footer-social a{color:#fff;font-size:17px;transition:opacity 0.3s ease;}
-    .footer-social a:hover{opacity:0.75;}
-    .footer-privacy a{color:#fff;text-decoration:none;font-size:13px;opacity:0.85;}
-    .footer-privacy a:hover{opacity:1;}
-    .footer-separator{border-top:1px solid rgba(255,255,255,0.15);margin:0 auto 30px;width:100%;max-width:1200px;}
-    .footer-legal{background:#000;color:#fff;padding:12px 20px;}
-    .footer-legal-content{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;}
-    .footer-legal p{margin:0;font-size:13px;font-weight:400;color:#fff;letter-spacing:0.3px;}
-    .footer-legal img{height:55px;cursor:pointer;opacity:0.9;transition:opacity 0.3s ease;}
-    .footer-legal img:hover{opacity:1;}
-  </style>
+/* FOOTER */
+footer{
+  background:#0b1220;
+  color:#fff;
+  padding-top:50px;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+  margin-bottom:40px;
+}
+.footer-logo img{height:38px;}
+.footer-social{display:flex;gap:14px;margin-top:8px;}
+.footer-legal{background:#000;padding:12px 20px;text-align:center;}
+
+/* COOKIES PROFESSIONAL BAR */
+.cookie-popup{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#0b1220;
+  color:#fff;
+  padding:18px 28px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+  z-index:9999;
+  box-shadow:0 -6px 25px rgba(0,0,0,.25);
+  animation:slideUp .35s ease;
+}
+
+.cookie-text{
+  max-width:900px;
+  font-size:14px;
+}
+
+.cookie-buttons{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* BOTONES DESKTOP (más pequeños) */
+.cookie-btn{
+  border:none;
+  padding:8px 16px;
+  border-radius:7px;
+  cursor:pointer;
+  font-family:"Poppins",sans-serif;
+  font-size:13px;
+  transition:.25s;
+  width:auto;        /* ← evita que se expandan */
+  min-width:110px;   /* tamaño elegante */
+}
+
+.cookie-accept{
+  background:#ffffff;
+  color:#0b1220;
+  font-weight:500;
+}
+
+.cookie-accept:hover{
+  background:#e6e6e6;
+}
+
+.cookie-reject{
+  background:transparent;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.4);
+}
+
+.cookie-reject:hover{
+  background:rgba(255,255,255,.08);
+}
+
+
+
+
+/* MOBILE */
+@media (max-width:700px){
+
+  .menu-toggle{display:block;}
+
+  .nav-links{
+    position:fixed;
+    top:0;
+    right:-100%;
+    height:100vh;
+    width:260px;
+    background:#0b1220;
+    flex-direction:column;
+    padding-top:80px;
+    gap:22px;
+    transition:0.35s;
+    z-index:100;
+  }
+
+  .nav-links.active{right:0;}
+
+  .nav-links a{
+    padding:10px 20px;
+    font-size:18px;
+  }
+
+  /* CLOSE X TOP */
+  .close-menu{
+    position:absolute;
+    top:20px;
+    right:20px;
+    display:block;
+  }
+
+  .hero{min-height:560px;}
+  .logo-hero img{max-width:55%;}
+  .actions{flex-direction:column;gap:14px;}
+  .white-section{padding:70px 20px;}
+
+  .cookie-popup{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:18px;
+  }
+
+.cookie-buttons{
+    width:100%;
+    justify-content:space-between;
+  }
+
+    .cookie-btn{
+    flex:1;
+    text-align:center;
+    font-size:14px;
+    padding:12px;
+  }
+  
+}
+
+@keyframes slideUp{
+  from{
+    transform:translateY(100%);
+    opacity:0;
+  }
+  to{
+    transform:translateY(0);
+    opacity:1;
+  }
+}
+
+/* DESKTOP SAFETY */
+@media (min-width:901px){
+  .menu-toggle,
+  .close-menu{
+    display:none !important;
+  }
+}
+
+</style>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-bar" id="headerBar">
-      <div class="container">
-        <nav>
-          <div class="logo"><a href="index.html"><img src="logoIBERsolo.png" alt="Iber Cutlery Logo"></a></div>
-          <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="about.html">Meet Iber</a>
-            <div class="dropdown">
-              <a href="#">Products</a>
-              <div class="dropdown-content">
-                <a href="inspiration.html">Inspiration</a>
-                <a href="collections.html">Collections</a>
-                <a href="finishes.html">Finishes</a>
-                <a href="sets.html">Sets</a>
-              </div>
-            </div>
-            <a href="services.html">Services</a>
-            <a href="contact.html">Contact</a>
-            <a href="catalogue.html" class="catalogue-btn">Catalogue</a>
-          </div>
-          <div class="lang-wrapper">
-            <select id="lang-switcher">
-              <option value="en">EN</option>
-              <option value="pt">PT</option>
-              <option value="es">ES</option>
-            </select>
-          </div>
-        </nav>
-      </div>
-    </div>
-  </header>
+<header>
+<div class="header-bar" id="headerBar">
+<div class="container">
+<nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <video autoplay muted loop playsinline>
-      <source src="video2.mp4" type="video/mp4">
-    </video>
-    <div class="overlay">
-      <div class="hero-inner">
-        <div class="logo-hero"><img src="logoIBER-blanco.png" alt="Iber Cutlery Logo"></div>
-        <h1>Meet Iber Cutlery</h1>
-        <p class="lead">Where precision meets Portuguese craftsmanship.</p>
-      </div>
-    </div>
-  </section>
+<div class="logo">
+<a href="index.html"><img src="logoIBERsolo.png" alt="Iber Cutlery Logo"></a>
+</div>
 
-  <!-- ABOUT US SECTION -->
-  <section class="white-section">
-    <h2>Who We Are</h2>
-    <p>Iber Cutlery is a factory located in Braga, Portugal, specializing in the production of premium stainless steel cutlery.  
-    Our commitment to excellence combines cutting-edge technology with handcrafted precision, delivering products that reflect the true spirit of Portuguese industry.</p>
-  </section>
+<div class="menu-toggle" id="menuToggle">
+<i class="fas fa-bars"></i>
+</div>
 
-  <!-- TEAM -->
-  <section class="white-section">
-    <h2>Our People</h2>
-    <p>Behind every piece of cutlery stands a team of professionals passionate about design, engineering, and quality.  
-    Iber Cutlery’s success is built on decades of experience, innovation, and attention to detail.</p>
+<div class="nav-links" id="navLinks">
 
-    <div class="team-grid">
-      <div class="member">
-        <img src="team1.jpg" alt="Team Member">
-        <h3>João Pereira</h3>
-        <p>Founder & CEO</p>
-      </div>
-      <div class="member">
-        <img src="team2.jpg" alt="Team Member">
-        <h3>Maria Lopes</h3>
-        <p>Head of Production</p>
-      </div>
-      <div class="member">
-        <img src="team3.jpg" alt="Team Member">
-        <h3>André Silva</h3>
-        <p>Design Director</p>
-      </div>
-    </div>
-  </section>
+<div class="close-menu" id="closeMenu">
+<i class="fas fa-times"></i>
+</div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <div class="footer-logo"><img src="logoIBER.png" alt="Iber Cutlery"></div>
-        <div class="footer-about">Precision and tradition in cutlery manufacturing. Headquartered in Braga, Portugal.</div>
-      </div>
-      <div class="footer-col">
-        <h3>Contact</h3>
-        <div class="footer-contact">
-          <p>R. da Gandra 1782, 4805-537 Barco, Portugal</p>
-          <p>+351 253 579 523</p>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h3>Follow Us</h3>
-        <div class="footer-social">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/ibercutlery/" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="footer-privacy" style="margin-top:12px;"><a href="privacy.html">Privacy Policy</a></div>
-      </div>
-    </div>
-    <div class="footer-separator"></div>
-    <div class="footer-legal">
-      <div class="footer-legal-content">
-        <p>© <span id="copyright-year">2025</span> Iber Cutlery · All rights reserved</p>
-        <img src="logos_2020.png" alt="EU Logo" onclick="window.open('Ficha-do-Projeto-Iber.pdf','_blank')">
-      </div>
-    </div>
-  </footer>
+<a href="index.html">Home</a>
+<a href="meetdart.html">Meet Dart</a>
+<a href="services.html">Services</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="catalogue.html" class="catalogue-btn">Catalogue</a>
 
-  <script>
-    // Year
-    document.getElementById("copyright-year").textContent=new Date().getFullYear();
+</div>
 
-    // Scroll header
-    const headerBar=document.getElementById('headerBar');
-    window.addEventListener('scroll',()=>{headerBar.classList.toggle('scrolled',window.scrollY>60);});
+</nav>
+</div>
+</div>
+</header>
 
-    // Language persistence
-    const switcher=document.getElementById('lang-switcher');
-    const savedLang=localStorage.getItem('lang')||'en';
-    switcher.value=savedLang;
-    switcher.addEventListener('change',()=>{localStorage.setItem('lang',switcher.value);location.reload();});
-  </script>
+<section class="hero">
+<video autoplay muted loop playsinline>
+<source src="index1.mp4" type="video/mp4">
+</video>
+<div class="overlay">
+<div class="hero-inner">
+<div class="logo-hero"><img src="logoIBER-blanco.png" alt="Iber Cutlery Logo"></div>
+<h1>Precision and Tradition in Cutlery Manufacturing</h1>
+<p class="lead">Engineering excellence from Portugal to the world.</p>
+<div class="actions">
+<a href="catalogue.html" class="btn">Catalogue</a>
+<a href="services.html" class="btn">Services</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="white-section">
+<h2>Experience and Tradition</h2>
+<p>Iber Cutlery unites craftsmanship and technology to deliver the highest-quality cutlery...</p>
+
+<div class="box-grid">
+<div class="info-box"><h3>Collections</h3><p>A wide range...</p></div>
+<div class="info-box"><h3>Finishes</h3><p>From mirror to satin...</p></div>
+<div class="info-box"><h3>Sets</h3><p>Elegant sets...</p></div>
+</div>
+</section>
+
+<section class="white-section">
+<h2>Made in Portugal, Undeniable on Your Table</h2>
+<p>Rooted in the esteemed Portuguese tradition...</p>
+</section>
+
+<footer>
+<div class="container footer-grid">
+<div>
+<div class="footer-logo"><img src="logoIBER.png" alt="Iber Cutlery"></div>
+<div class="footer-about">Precision and tradition in cutlery manufacturing. Headquartered in Braga, Portugal.</div>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>R. da Gandra 1782, 4805-537 Barco, Portugal</p>
+<p>+351 253 579 523</p>
+</div>
+
+<div>
+<h3>Follow Us</h3>
+<div class="footer-social">
+<a href="https://www.facebook.com/ibercutlery" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/ibercutlery/" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+<div style="margin-top:12px;"><a href="privacy.html" style="color:#fff;">Privacy Policy</a></div>
+</div>
+</div>
+
+<div class="footer-legal">
+<p>© <span id="copyright-year">2025</span> Iber Cutlery · All rights reserved</p>
+<img src="logos_2020.png" style="height:55px;cursor:pointer;" onclick="window.open('Ficha-do-Projeto-Iber.pdf','_blank')">
+</div>
+</footer>
+
+<div class="cookie-popup" id="cookiePopup" style="display:none;">
+<p>This website uses cookies to ensure you get the best experience on our website.</p>
+<button id="acceptCookies">Accept</button>
+</div>
+
+<script>
+
+document.getElementById("copyright-year").textContent=new Date().getFullYear();
+
+/* HEADER SCROLL */
+const headerBar=document.getElementById('headerBar');
+window.addEventListener('scroll',()=>{headerBar.classList.toggle('scrolled',window.scrollY>60);});
+
+/* MOBILE MENU */
+const toggle=document.getElementById('menuToggle');
+const nav=document.getElementById('navLinks');
+const closeBtn=document.getElementById('closeMenu');
+
+function isMobile(){
+  return window.innerWidth<=900;
+}
+
+toggle.addEventListener('click',()=>{
+  if(!isMobile()) return;
+  nav.classList.add('active');
+  toggle.style.display='none';
+});
+
+closeBtn.addEventListener('click',()=>{
+  if(!isMobile()) return;
+  nav.classList.remove('active');
+  toggle.style.display='block';
+});
+
+/* Prevent desktop artifacts on resize */
+window.addEventListener('resize',()=>{
+  if(!isMobile()){
+    nav.classList.remove('active');
+    toggle.style.display='';
+  }
+});
+
+/* click outside */
+document.addEventListener('click',(e)=>{
+  if(!isMobile()) return;
+
+  if(!nav.contains(e.target) && !toggle.contains(e.target)){
+    nav.classList.remove('active');
+    toggle.style.display='block';
+  }
+});
+
+
+
+/* COOKIES */
+const cookiePopup=document.getElementById('cookiePopup');
+const acceptBtn=document.getElementById('acceptCookies');
+const rejectBtn=document.getElementById('rejectCookies');
+
+if(!localStorage.getItem('cookieChoice')){
+  cookiePopup.style.display='flex';
+}
+
+acceptBtn.addEventListener('click',()=>{
+  localStorage.setItem('cookieChoice','accepted');
+  cookiePopup.style.display='none';
+});
+
+rejectBtn.addEventListener('click',()=>{
+  localStorage.setItem('cookieChoice','rejected');
+  cookiePopup.style.display='none';
+});
+
+</script>
+
 </body>
 </html>
