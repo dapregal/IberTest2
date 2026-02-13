@@ -321,20 +321,25 @@ display:block;
 /* MENÚ HAMBURGUESA MÓVIL SCROLLABLE */
 @media (max-width:900px){
 
+/* MENÚ HAMBURGUESA MÓVIL TOTALMENTE ADAPTADO */
+@media (max-width:900px){
+
 .nav-links{
 position:fixed;
 top:0;
 right:-100%;
-width:280px;
-height:100dvh;
+width:100%; /* ocupar todo el ancho */
+height:100vh; /* altura completa */
 background:#0b1220;
 flex-direction:column;
 padding-top:60px;
 padding-bottom:40px;
-overflow-y:auto; /* scrollable */
+overflow-y:auto; /* scroll si hay muchos elementos */
 transition:.35s;
 z-index:1001;
 scroll-behavior:smooth;
+display:flex;
+align-items:flex-end; /* alineación a la derecha */
 }
 
 .nav-links.active{
@@ -343,8 +348,29 @@ right:0;
 
 .nav-links a{
 font-size:18px;
-width:100%;
-padding:12px 30px;
+width:auto;
+padding:12px 24px;
+margin-bottom:10px; /* más juntos */
+color:#fff;
+text-decoration:none;
+text-align:right;
+}
+
+.nav-social{
+display:flex;
+gap:16px;
+margin:16px 24px 0 0; /* misma línea, separados */
+}
+
+.catalogue-btn{
+background:#fff;
+color:#000;
+border:none;
+padding:6px 14px; /* ajustado al texto */
+margin-bottom:10px;
+text-align:right;
+border-radius:40px;
+font-weight:500;
 }
 
 .close-menu{
@@ -352,9 +378,10 @@ display:block;
 position:absolute;
 top:12px;
 right:12px;
-z-index:1002; /* encima del scroll */
+z-index:1002;
 }
 
+/* Scrollbar minimal */
 .nav-links::-webkit-scrollbar{
 width:6px;
 }
@@ -370,9 +397,6 @@ border-radius:3px;
 display:none !important;
 }
 }
-}
-
-
 
 
 
