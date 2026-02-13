@@ -319,16 +319,17 @@ display:block;
 }
 
 
-/* =================MENÚ HAMBURGUESA MÓVIL TOTALMENTE ADAPTADO================= */
-  
+/* MENÚ HAMBURGUESA MÓVIL TOTALMENTE ADAPTADO */
+
 @media (max-width:900px){
+
 .nav-links{
 position:fixed;
 top:0;
 right:-100%;
 width:100%;
 height:100vh; /* altura completa */
-background:rgba(0,0,0,0.85); /* negro translúcido */
+background:rgba(0,0,0,0.9); /* negro translúcido */
 flex-direction:column;
 justify-content:center; /* centra verticalmente los botones */
 align-items:center; /* centra horizontalmente los botones */
@@ -349,7 +350,8 @@ color:#fff;
 text-decoration:none;
 text-align:center;
 margin:1px 0; /* más juntos verticalmente */
-width:100%; /* ocupan todo el ancho disponible del centro */
+padding:12px 0; /* sin margen horizontal */
+width:50%; /* ocupan todo el ancho disponible del centro */
 max-width:280px;
 }
 
@@ -669,5 +671,3 @@ cookiePopup.style.display='none';
 
 </body>
 </html>
-
-
