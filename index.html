@@ -329,7 +329,7 @@ top:0;
 right:-100%;
 width:100%;
 height:100vh; /* altura completa */
-background:rgba(0,0,0,0.9); /* negro translúcido */
+background:rgba(0,0,0,0.85); /* negro translúcido */
 flex-direction:column;
 justify-content:center; /* centra verticalmente los botones */
 align-items:center; /* centra horizontalmente los botones */
@@ -350,9 +350,9 @@ color:#fff;
 text-decoration:none;
 text-align:center;
 margin:1px 0; /* más juntos verticalmente */
-padding:12px 0; /* sin margen horizontal */
-width:50%; /* ocupan todo el ancho disponible del centro */
-max-width:280px;
+padding:1px 0; /* sin margen horizontal */
+width:100%; /* ocupan todo el ancho disponible del centro */
+max-width:200px;
 }
 
 .nav-social{
@@ -465,6 +465,16 @@ flex:1;
 text-align:center;
 }
 
+}
+
+@media (orientation: landscape) and (max-width:900px) {
+  .logo-hero {
+    display: none;
+  }
+}
+
+body.no-scroll{
+  overflow: hidden;
 }
 
 </style>
@@ -637,11 +647,21 @@ const nav=document.getElementById('navLinks');
 const closeBtn=document.getElementById('closeMenu');
 
 toggle.addEventListener('click',()=>{
-nav.classList.add('active');
+  nav.classList.add('active');
+  document.body.classList.add('no-scroll'); // bloquea scroll
 });
 
 closeBtn.addEventListener('click',()=>{
-nav.classList.remove('active');
+  nav.classList.remove('active');
+  document.body.classList.remove('no-scroll'); // desbloquea scroll
+});
+
+// Cerrar menú si se hace click fuera
+document.addEventListener('click',(e)=>{
+  if(!nav.contains(e.target) && !toggle.contains(e.target)){
+    nav.classList.remove('active');
+    document.body.classList.remove('no-scroll'); // desbloquea scroll
+  }
 });
 
 document.addEventListener('click',(e)=>{
