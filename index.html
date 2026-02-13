@@ -124,11 +124,13 @@ cursor:pointer;
 
 /* ================= HERO ================= */
 
+
 .hero{
 position:relative;
 min-height:100dvh;
 width:100%;
 overflow:hidden;
+display:flex;
 }
 
 .hero video{
@@ -139,59 +141,102 @@ height:100%;
 object-fit:cover;
 }
 
+/* overlay mejorado */
 .overlay{
 position:absolute;
 inset:0;
-background:linear-gradient(180deg,rgba(11,18,32,0.35),rgba(11,18,32,0.65));
+background:linear-gradient(180deg,rgba(11,18,32,0.35),rgba(11,18,32,0.70));
 display:flex;
 align-items:center;
 justify-content:center;
-text-align:center;
-padding:40px 20px;
+padding:clamp(24px,6vw,60px);
 }
 
+/* contenido hero */
 .hero-inner{
-max-width:900px;
+width:100%;
+max-width:820px;
+margin:auto;
+text-align:center;
 color:#fff;
+display:flex;
+flex-direction:column;
+align-items:center;
 }
 
+/* LOGO INTELIGENTE */
 .logo-hero img{
-width:clamp(180px,20vw,260px);
+width:clamp(140px,38vw,240px);
 margin-bottom:22px;
 }
 
+/* texto */
 h1{
-font-size:clamp(32px,5vw,54px);
-margin-bottom:14px;
-font-weight:300;
+font-size:clamp(28px,6vw,54px);
+margin-bottom:10px;
 }
 
 .lead{
-font-size:clamp(16px,2.2vw,18px);
+font-size:clamp(15px,2.5vw,18px);
+max-width:500px;
 }
 
+/* BOTONES PERFECTAMENTE CENTRADOS */
 .actions{
+width:100%;
 display:flex;
-gap:24px;
 justify-content:center;
-margin-top:40px;
+align-items:center;
+gap:18px;
+margin-top:34px;
 flex-wrap:wrap;
 }
 
+/* BOTONES MÁS TÁCTILES */
 .btn{
-padding:16px 44px;
+padding:15px 38px;
 border-radius:80px;
 border:1.6px solid #fff;
 color:#fff;
 text-decoration:none;
-font-size:18px;
-min-width:180px;
-transition:.3s;
+font-size:17px;
+min-width:160px;
+text-align:center;
+transition:.25s;
 }
 
 .btn:hover{
 background:rgba(255,255,255,.15);
 transform:translateY(-2px);
+}
+
+/* ========= HERO MOBILE MASTER ========= */
+
+@media (max-width:600px){
+
+.hero{
+min-height:100svh; /* evita bugs Safari */
+}
+
+.overlay{
+padding-top:90px; /* evita choque con header */
+}
+
+.logo-hero img{
+width:58%;
+max-width:190px;
+}
+
+.actions{
+flex-direction:column;
+width:100%;
+}
+
+.btn{
+width:100%;
+max-width:280px;
+}
+
 }
 
 /* ================= SECTIONS ================= */
