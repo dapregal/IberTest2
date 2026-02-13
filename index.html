@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<!-- CRÍTICO PARA RESPONSIVE REAL -->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+
 <title>Iber Cutlery — Precision & Tradition | Made in Portugal</title>
 <meta name="description" content="Iber Cutlery — Portuguese cutlery manufacturer. Precision engineering, handcrafted finishes and industrial production. B2B catalog and corporate information."/>
 <meta name="theme-color" content="#0b1220"/>
@@ -12,474 +15,383 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*,*::before,*::after{box-sizing:border-box;}
-html,body{
-  height:100%;
-  margin:0;
-  font-family:"Poppins",sans-serif;
-  font-weight:300;
-  line-height:1.5;
-  color:#111;
-  background:#fff;
-  overflow-x:hidden;
+
+/* RESET PROFESIONAL */
+*,*::before,*::after{
+box-sizing:border-box;
+margin:0;
+padding:0;
 }
 
-/* HEADER */
-header{position:fixed;top:0;left:0;right:0;z-index:100;}
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:"Poppins",sans-serif;
+font-weight:300;
+line-height:1.5;
+color:#111;
+background:#fff;
+overflow-x:hidden;
+}
+
+/* CONTENEDOR GLOBAL */
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 clamp(16px,4vw,24px);
+}
+
+/* ================= HEADER ================= */
+
+header{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:1000;
+}
+
 .header-bar{
-  width:100%;
-  background:linear-gradient(to bottom,rgba(0,0,0,0.6)0%,rgba(0,0,0,0.3)60%,rgba(0,0,0,0)100%);
-  padding:6px 0;
-  transition:background 0.4s ease;
-}
-.header-bar.scrolled{
-  background:rgba(0,0,0,0.95);
-  backdrop-filter:blur(5px);
+width:100%;
+background:linear-gradient(to bottom,rgba(0,0,0,0.6),rgba(0,0,0,0));
+transition:.35s;
 }
 
-.container{max-width:1200px;margin:0 auto;padding:0 20px;}
-nav{display:flex;align-items:center;justify-content:space-between;height:56px;}
-.logo img{height:16px;display:block;}
+.header-bar.scrolled{
+background:rgba(0,0,0,.95);
+backdrop-filter:blur(6px);
+}
+
+nav{
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:64px;
+}
+
+.logo img{
+height:18px;
+}
 
 /* NAV */
+
 .nav-links{
-  display:flex;
-  align-items:center;
-  gap:26px;
+display:flex;
+align-items:center;
+gap:26px;
 }
+
 .nav-links a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:400;
-  font-size:15px;
+color:#fff;
+text-decoration:none;
+font-size:15px;
 }
 
-
-
-
-
-/* LANGUAGE SELECTOR DESKTOP */
-.language-selector {
-  position: relative;
-  display: inline-block;
-}
-
-.language-selector .lang-btn {
-  background: transparent;
-  border: 1.6px solid #fff;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 80px;
-  font-size: 15px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.language-selector .lang-dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #0b1220;
-  border: 1px solid #fff;
-  border-radius: 6px;
-  margin-top: 6px;
-  list-style: none;
-  padding: 8px 0;
-  min-width: 70px;
-  z-index: 200;
-}
-
-.language-selector .lang-dropdown li a {
-  display: block;
-  padding: 6px 12px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.language-selector .lang-dropdown li a:hover {
-  background: rgba(255,255,255,0.15);
-}
-
-/* Mostrar dropdown al hover en desktop */
-@media (max-width:900px), 
-       (max-height:500px) and (orientation:landscape){
-  .language-selector:hover .lang-dropdown {
-    display: block;
-  }
-}
-
-/* ICONOS RRSS NAV */
-.nav-social {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-left: 20px; /* separación con idioma */
-}
-
-.nav-social a i {
-  color: #fff;
-  font-size: 18px;
-  transition: color 0.3s ease;
-}
-
-.nav-social a:hover i {
-  color: #888;
-}
-
-/* MÓVIL: idioma al final del menú */
-@media (max-width:900px), 
-       (max-height:500px) and (orientation:landscape){
-  .language-selector {
-    display: block;
-    margin: 20px 0 10px 0;
-  }
-
-  .language-selector .lang-btn {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .language-selector .lang-dropdown {
-    position: static;
-    border: none;
-    background: transparent;
-    padding: 0;
-    margin-top: 0;
-  }
-
-  .language-selector .lang-dropdown li a {
-    padding: 12px 20px;
-    font-size: 16px;
-  }
-
-  /* Ocultar iconos RRSS en el header de móvil si quieres manejarlos abajo */
-  .nav-social {
-    margin: 10px 0 20px 0;
-  }
-}
-
-
-
-
-
-
-
-
+/* CTA */
 .catalogue-btn{
-  border:1.6px solid #fff;
-  padding:3px 16px;
-  border-radius:80px;
+border:1.6px solid #fff;
+padding:5px 16px;
+border-radius:80px;
 }
 
+/* SOCIAL */
+.nav-social{
+display:flex;
+gap:18px;
+margin-left:10px;
+}
 
-/* MOBILE MENU BUTTONS */
+.nav-social i{
+color:#fff;
+font-size:18px;
+transition:.3s;
+}
+
+.nav-social i:hover{
+color:#aaa;
+}
+
+/* MENU BUTTON */
 .menu-toggle,
 .close-menu{
-  display:none;
-  font-size:24px;
-  color:#fff;
-  cursor:pointer;
-  z-index:101;
+display:none;
+font-size:26px;
+color:#fff;
+cursor:pointer;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
-  position:relative;
-  height:100vh;
-  min-height:640px;
-  overflow:hidden;
+position:relative;
+min-height:100dvh;
+width:100%;
+overflow:hidden;
 }
+
 .hero video{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
 }
+
 .overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(180deg,rgba(11,18,32,0.35),rgba(11,18,32,0.6));
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
+position:absolute;
+inset:0;
+background:linear-gradient(180deg,rgba(11,18,32,0.35),rgba(11,18,32,0.65));
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px 20px;
 }
+
 .hero-inner{
-  max-width:900px;
-  padding:0 20px;
-  color:#fff;
+max-width:900px;
+color:#fff;
 }
+
 .logo-hero img{
-  max-width:20%;
-  min-width:200px;
-  margin-bottom:20px;
+width:clamp(180px,20vw,260px);
+margin-bottom:22px;
 }
+
 h1{
-  font-size:clamp(32px,6vw,52px);
-  margin-bottom:12px;
-  font-weight:300;
+font-size:clamp(32px,5vw,54px);
+margin-bottom:14px;
+font-weight:300;
 }
+
 .lead{
-  font-size:17px;
-  margin-bottom:20px;
+font-size:clamp(16px,2.2vw,18px);
 }
+
 .actions{
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  margin-top:40px;
-  flex-wrap:wrap;
+display:flex;
+gap:24px;
+justify-content:center;
+margin-top:40px;
+flex-wrap:wrap;
 }
+
 .btn{
-  padding:16px 44px;
-  border-radius:80px;
-  border:1.6px solid #fff;
-  color:#fff;
-  text-decoration:none;
-  font-size:19px;
-  min-width:170px;
-}
-/* HOVER PROFESIONAL PARA BOTONES GRANDES DEL HERO */
-.btn:hover {
-  background: rgba(255,255,255,0.15); /* sutil overlay blanco */
-  border-color: #fff;                 /* borde blanco */
-  color: #fff;                        /* mantiene texto blanco */
-  transform: translateY(-2px);        /* efecto ligero de elevación */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.25); /* sombra elegante */
-  transition: all 0.3s ease;
+padding:16px 44px;
+border-radius:80px;
+border:1.6px solid #fff;
+color:#fff;
+text-decoration:none;
+font-size:18px;
+min-width:180px;
+transition:.3s;
 }
 
-/* SECTIONS */
+.btn:hover{
+background:rgba(255,255,255,.15);
+transform:translateY(-2px);
+}
+
+/* ================= SECTIONS ================= */
+
 .white-section{
-  padding:100px 20px;
-  text-align:center;
+padding:clamp(70px,10vw,110px) 20px;
+text-align:center;
 }
+
 .white-section h2{
-  font-size:clamp(26px,4vw,40px);
-  margin-bottom:20px;
-  font-weight:400;
+font-size:clamp(26px,4vw,40px);
+margin-bottom:20px;
+font-weight:400;
 }
+
 .white-section p{
-  max-width:850px;
-  margin:0 auto 60px;
-  font-size:16px;
+max-width:850px;
+margin:0 auto 60px;
+font-size:16px;
 }
+
 .box-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
 }
+
 .info-box{
-  padding:30px 20px;
-  border:1px solid rgba(0,0,0,0.1);
-  border-radius:80px;
-  background:#fafafa;
+padding:30px 22px;
+border:1px solid rgba(0,0,0,0.08);
+border-radius:40px;
+background:#fafafa;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
+
 footer{
-  background:#0b1220;
-  color:#fff;
-  padding-top:50px;
-  font-size:14px; /* tamaño base footer más pequeño */
+background:#0b1220;
+color:#fff;
+padding-top:60px;
 }
+
 .footer-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:40px;
-  margin-bottom:40px;
-}
-.footer-logo img{height:38px;}
-.footer-social{display:flex;gap:14px;margin-top:5px;}
-.footer-social a i {
-  color: #fff;          /* iconos blancos */
-  font-size: 20px;      /* tamaño ligeramente más grande */
-  transition: color 0.3s ease;
-}
-.footer-social a:hover i {
-  color: #888888;       /* efecto hover elegante */
-}.footer-legal{
-  background:#000;
-  padding:12px 20px;
-  text-align:center;
-  font-size:13px; /* un poco más pequeño */
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:40px;
+margin-bottom:40px;
 }
 
-/* PROFESSIONAL COOKIE BANNER */
+.footer-logo img{
+height:40px;
+}
+
+.footer-social{
+display:flex;
+gap:14px;
+margin-top:10px;
+}
+
+.footer-social i{
+color:#fff;
+font-size:20px;
+}
+
+.footer-social i:hover{
+color:#888;
+}
+
+.footer-legal{
+background:#000;
+padding:16px;
+text-align:center;
+font-size:13px;
+}
+
+/* ================= COOKIES ================= */
+
 .cookie-popup{
-  position:fixed;
-  bottom:0;
-  left:0;
-  width:100%;
-  background:#0b1220;
-  color:#fff;
-  padding:18px 28px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-  z-index:9999;
-  box-shadow:0 -6px 25px rgba(0,0,0,.25);
-  animation:slideUp .35s ease;
-  font-size:14px;
-}
-
-.cookie-text{
-  max-width:900px;
-  line-height:1.5;
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+background:#0b1220;
+color:#fff;
+padding:20px;
+display:flex;
+justify-content:space-between;
+gap:20px;
+flex-wrap:wrap;
+z-index:9999;
 }
 
 .cookie-buttons{
-  display:flex;
-  gap:12px;
-  align-items:center;
-  justify-content:center;
-  flex-wrap:wrap;
+display:flex;
+gap:10px;
+flex-wrap:wrap;
 }
 
 .cookie-btn{
-  border:none;
-  padding:8px 18px;
-  border-radius:7px;
-  cursor:pointer;
-  font-family:"Poppins",sans-serif;
-  font-size:13px;
-  transition:.25s;
-  width:auto;
-  min-width:110px;
+border:none;
+padding:10px 18px;
+border-radius:6px;
+cursor:pointer;
+font-family:"Poppins";
 }
 
 .cookie-accept{
-  background:#ffffff;
-  color:#0b1220;
-  font-weight:500;
+background:#fff;
+color:#0b1220;
 }
-.cookie-accept:hover{
-  background:#e6e6e6;
-}
+
 .cookie-reject{
-  background:transparent;
-  color:#fff;
-  border:1px solid rgba(255,255,255,.4);
-}
-.cookie-reject:hover{
-  background:rgba(255,255,255,.08);
+background:transparent;
+border:1px solid rgba(255,255,255,.4);
+color:#fff;
 }
 
-/* MOBILE */
-@media (max-width:900px), 
-       (max-height:500px) and (orientation:landscape){
+/* ================= TABLET ================= */
 
-  .menu-toggle{display:block;}
+@media (max-width:900px){
 
-/* NAV LINKS MÓVIL: alineación derecha */
-.nav-links.active {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; /* todo a la derecha */
-  gap: 22px;
+.menu-toggle{
+display:block;
 }
 
-/* IDIOMAS MÓVIL: botones independientes en fila */
-.language-selector-mobile {
-  display: flex;
-  gap: 12px;
-  margin: 20px 20px 10px 0; /* margen superior y derecha */
+.nav-links{
+position:fixed;
+top:0;
+right:-100%;
+width:280px;
+height:100dvh;
+background:#0b1220;
+flex-direction:column;
+align-items:flex-start;
+padding:90px 30px;
+transition:.35s;
 }
 
-.language-selector-mobile .lang-mobile-btn {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  border: 1.6px solid #fff;
-  padding: 6px 12px;
-  border-radius: 80px;
-  transition: 0.3s;
+.nav-links.active{
+right:0;
 }
 
-.language-selector-mobile .lang-mobile-btn:hover {
-  background: rgba(255,255,255,0.15);
+.nav-links a{
+font-size:18px;
+width:100%;
 }
 
-  .nav-links{
-    position:fixed;
-    top:0;
-    right:-100%;
-    height:100vh;
-    width:260px;
-    background:#0b1220;
-    flex-direction:column;
-    padding-top:80px;
-    gap:22px;
-    transition:0.35s;
-    z-index:100;
-  }
-  .nav-links.active{right:0;}
-  .nav-links a{
-    padding:6px 40px;
-    font-size:17px;
-
-  }
-  .close-menu{
-    position:absolute;
-    top:20px;
-    right:20px;
-    display:block;
-  }
-  .hero{min-height:560px;}
-  .logo-hero img{max-width:55%;}
-  .actions{flex-direction:column;gap:14px;}
-  .white-section{padding:70px 20px;}
-
-  /* MOBILE COOKIE BANNER */
-  .cookie-popup{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:18px 20px;
-  }
-  .cookie-buttons{
-    width:100%;
-    justify-content:space-between;
-  }
-  .cookie-btn{
-    flex:1;
-    text-align:center;
-    font-size:14px;
-    padding:12px;
-  }
-
-
-  
+.close-menu{
+display:block;
+position:absolute;
+top:24px;
+right:24px;
 }
 
-@keyframes slideUp{
-  from{
-    transform:translateY(100%);
-    opacity:0;
-  }
-  to{
-    transform:translateY(0);
-    opacity:1;
-  }
+.actions{
+flex-direction:column;
 }
 
-/* DESKTOP SAFETY */
-@media (max-width:900px), 
-       (max-height:500px) and (orientation:landscape){
-  .menu-toggle,
-  .close-menu{
-    display:none !important;
-  }
+.btn{
+width:100%;
+max-width:320px;
+}
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:600px){
+
+nav{
+height:58px;
+}
+
+.logo img{
+height:16px;
+}
+
+.white-section{
+padding:70px 16px;
+}
+
+.cookie-popup{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.cookie-buttons{
+width:100%;
+}
+
+.cookie-btn{
+flex:1;
+text-align:center;
+}
+
 }
 
 </style>
 </head>
+
 <body>
 
 <header>
@@ -494,38 +406,26 @@ footer{
 <div class="menu-toggle" id="menuToggle">
 <i class="fas fa-bars"></i>
 </div>
-  <!-- MERDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
 
 <div class="nav-links" id="navLinks">
 
-  <div class="close-menu" id="closeMenu">
-    <i class="fas fa-times"></i>
-  </div>
-
-  <a href="index.html">Home</a>
-  <a href="meetdart.html">Meet Dart</a>
-  <a href="services.html">Services</a>
-  <a href="about.html">About Us</a>
-  <a href="contact.html">Contact</a>
-  <a href="catalogue.html" class="catalogue-btn">Catalogue</a>
-
-  <!-- NUEVO SELECTOR DE IDIOMA -->
-  <div class="language-selector-mobile">
-  <a href="?lang=en" class="lang-mobile-btn">EN</a>
-  <a href="?lang=pt" class="lang-mobile-btn">PT</a>
-  <a href="?lang=es" class="lang-mobile-btn">ES</a>
+<div class="close-menu" id="closeMenu">
+<i class="fas fa-times"></i>
 </div>
 
-  <!-- ICONOS RRSS DESKTOP -->
-  <div class="nav-social">
-    <a href="https://www.facebook.com/ibercutlery" target="_blank"><i class="fab fa-facebook-f"></i></a>
-    <a href="https://www.instagram.com/ibercutlery/" target="_blank"><i class="fab fa-instagram"></i></a>
-  </div>
+<a href="index.html">Home</a>
+<a href="meetdart.html">Meet Dart</a>
+<a href="services.html">Services</a>
+<a href="about.html">About Us</a>
+<a href="contact.html">Contact</a>
+<a href="catalogue.html" class="catalogue-btn">Catalogue</a>
 
+<div class="nav-social">
+<a href="https://www.facebook.com/ibercutlery" target="_blank"><i class="fab fa-facebook-f"></i></a>
+<a href="https://www.instagram.com/ibercutlery/" target="_blank"><i class="fab fa-instagram"></i></a>
 </div>
 
-
-
+</div>
 </nav>
 </div>
 </div>
@@ -535,40 +435,69 @@ footer{
 <video autoplay muted loop playsinline>
 <source src="index1.mp4" type="video/mp4">
 </video>
+
 <div class="overlay">
 <div class="hero-inner">
-<div class="logo-hero"><img src="logoIBER-blanco.png" alt="Iber Cutlery Logo"></div>
+
+<div class="logo-hero">
+<img src="logoIBER-blanco.png" alt="Iber Cutlery Logo">
+</div>
+
 <h1>Cutlery Manufacturing Solutions</h1>
 <p class="lead">Engineering excellence from Portugal to the world.</p>
+
 <div class="actions">
 <a href="catalogue.html" class="btn">Catalogue</a>
 <a href="services.html" class="btn">Services</a>
 </div>
+
 </div>
 </div>
 </section>
 
 <section class="white-section">
 <h2>Experience and Tradition</h2>
+
 <p>Iber Cutlery unites craftsmanship and technology to deliver the highest-quality cutlery. With decades of expertise, our products embody the perfect balance between innovation, design, and Portuguese tradition.</p>
+
 <div class="box-grid">
-<div class="info-box"><h3>Collections</h3><p>A wide range of contemporary and classic designs tailored to different lifestyles and table settings.</p></div>
-<div class="info-box"><h3>Finishes</h3><p>From mirror to satin, brushed or coated — every finish is perfected for beauty, comfort, and durability.</p></div>
-<div class="info-box"><h3>Sets</h3><p>Elegant sets that combine precision, ergonomics, and visual harmony to complement every occasion.</p></div>
+
+<div class="info-box">
+<h3>Collections</h3>
+<p>A wide range of contemporary and classic designs tailored to different lifestyles and table settings.</p>
+</div>
+
+<div class="info-box">
+<h3>Finishes</h3>
+<p>From mirror to satin, brushed or coated — every finish is perfected for beauty, comfort, and durability.</p>
+</div>
+
+<div class="info-box">
+<h3>Sets</h3>
+<p>Elegant sets that combine precision, ergonomics, and visual harmony to complement every occasion.</p>
+</div>
+
 </div>
 </section>
 
 <section class="white-section">
 <h2>Made in Portugal, Undeniable on Your Table</h2>
+
 <p>Rooted in the esteemed Portuguese tradition, we export the Lusitanian identity worldwide, standing as an undeniable reference on any table. We present the finest solutions in terms of usability and ergonomics, combining functionality and refinement in details through the constant pursuit of innovative designs that cater to various lifestyles, whether dynamic and avant-garde or luxurious and exclusive.</p>
 </section>
 
 <footer>
 <div class="container footer-grid">
+
 <div>
-  <br>
-<div class="footer-logo"><img src="logoIBER.png" alt="Iber Cutlery"></div> <br>
-<div class="footer-about">Precision and tradition in cutlery manufacturing. Headquartered in Braga, Portugal.</div>
+<br>
+<div class="footer-logo">
+<img src="logoIBER.png" alt="Iber Cutlery">
+</div>
+<br>
+<div class="footer-about">
+Precision and tradition in cutlery manufacturing. Headquartered in Braga, Portugal.
+</div>
 </div>
 
 <div>
@@ -579,22 +508,34 @@ footer{
 
 <div>
 <h3>Follow Us</h3>
+
 <div class="footer-social">
 <a href="https://www.facebook.com/ibercutlery" target="_blank"><i class="fab fa-facebook-f"></i></a>
 <a href="https://www.instagram.com/ibercutlery/" target="_blank"><i class="fab fa-instagram"></i></a>
 </div>
-<div style="margin-top:12px;"><a href="privacy.html" style="color:#fff;">Privacy Policy</a></div>
+
+<div style="margin-top:12px;">
+<a href="privacy.html" style="color:#fff;">Privacy Policy</a>
+</div>
+
 </div>
 </div>
 
 <div class="footer-legal">
 <p>© <span id="copyright-year">2025</span> Iber Cutlery · All rights reserved</p>
-<img src="logos_2020.png" style="height:55px;cursor:pointer;" onclick="window.open('Ficha-do-Projeto-Iber.pdf','_blank')">
+
+<img src="logos_2020.png"
+style="height:55px;cursor:pointer;"
+onclick="window.open('Ficha-do-Projeto-Iber.pdf','_blank')">
 </div>
 </footer>
 
 <div class="cookie-popup" id="cookiePopup" style="display:none;">
-<div class="cookie-text">We use cookies to ensure you get the best experience on our website. By continuing to browse, you accept our <a href="privacy.html" style="color:#fff;text-decoration:underline;">Privacy Policy</a>.</div>
+<div>
+We use cookies to ensure you get the best experience on our website. By continuing to browse, you accept our
+<a href="privacy.html" style="color:#fff;text-decoration:underline;">Privacy Policy</a>.
+</div>
+
 <div class="cookie-buttons">
 <button class="cookie-btn cookie-accept" id="acceptCookies">Accept</button>
 <button class="cookie-btn cookie-reject" id="rejectCookies">Decline</button>
@@ -602,72 +543,51 @@ footer{
 </div>
 
 <script>
+
 document.getElementById("copyright-year").textContent=new Date().getFullYear();
 
 /* HEADER SCROLL */
 const headerBar=document.getElementById('headerBar');
-window.addEventListener('scroll',()=>{headerBar.classList.toggle('scrolled',window.scrollY>60);});
+
+window.addEventListener('scroll',()=>{
+headerBar.classList.toggle('scrolled',window.scrollY>60);
+});
 
 /* MOBILE MENU */
 const toggle=document.getElementById('menuToggle');
 const nav=document.getElementById('navLinks');
 const closeBtn=document.getElementById('closeMenu');
 
-function isMobile(){return window.innerWidth<=900;}
-
 toggle.addEventListener('click',()=>{
-  if(!isMobile()) return;
-  nav.classList.add('active');
-  toggle.style.display='none';
+nav.classList.add('active');
 });
 
 closeBtn.addEventListener('click',()=>{
-  if(!isMobile()) return;
-  nav.classList.remove('active');
-  toggle.style.display='block';
+nav.classList.remove('active');
 });
 
-/* Prevent desktop artifacts on resize */
-window.addEventListener('resize',()=>{
-  if(!isMobile()){
-    nav.classList.remove('active');
-    toggle.style.display='';
-  }
-});
-
-/* click outside mobile menu */
 document.addEventListener('click',(e)=>{
-  if(!isMobile()) return;
-  if(!nav.contains(e.target) && !toggle.contains(e.target)){
-    nav.classList.remove('active');
-    toggle.style.display='block';
-  }
+if(!nav.contains(e.target) && !toggle.contains(e.target)){
+nav.classList.remove('active');
+}
 });
 
 /* COOKIES */
 const cookiePopup=document.getElementById('cookiePopup');
-const acceptBtn=document.getElementById('acceptCookies');
-const rejectBtn=document.getElementById('rejectCookies');
 
 if(!localStorage.getItem('cookieChoice')){
-  cookiePopup.style.display='flex';
+cookiePopup.style.display='flex';
 }
 
-acceptBtn.addEventListener('click',()=>{
-  localStorage.setItem('cookieChoice','accepted');
-  cookiePopup.style.display='none';
-});
+document.getElementById('acceptCookies').onclick=()=>{
+localStorage.setItem('cookieChoice','accepted');
+cookiePopup.style.display='none';
+};
 
-rejectBtn.addEventListener('click',()=>{
-  localStorage.setItem('cookieChoice','rejected');
-  cookiePopup.style.display='none';
-});
-
-
-
-
-
-
+document.getElementById('rejectCookies').onclick=()=>{
+localStorage.setItem('cookieChoice','rejected');
+cookiePopup.style.display='none';
+};
 
 </script>
 
