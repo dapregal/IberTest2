@@ -318,28 +318,24 @@ display:block;
 }
 }
 
-/* MENÚ HAMBURGUESA MÓVIL SCROLLABLE */
-@media (max-width:900px){
 
-/* MENÚ HAMBURGUESA MÓVIL TOTALMENTE ADAPTADO */
-@media (max-width:900px){
+/* MENÚ HAMBURGUESA MÓVIL TOTALMENTE ADAPTADO */@media (max-width:900px){
 
 .nav-links{
 position:fixed;
 top:0;
 right:-100%;
-width:100%; /* ocupar todo el ancho */
+width:100%;
 height:100vh; /* altura completa */
-background:#0b1220;
+background:rgba(0,0,0,0.75); /* negro translúcido */
 flex-direction:column;
-padding-top:60px;
-padding-bottom:40px;
+justify-content:center; /* centra verticalmente los botones */
+align-items:center; /* centra horizontalmente los botones */
+padding:0; /* sin margen arriba/abajo */
 overflow-y:auto; /* scroll si hay muchos elementos */
 transition:.35s;
 z-index:1001;
 scroll-behavior:smooth;
-display:flex;
-align-items:flex-end; /* alineación a la derecha */
 }
 
 .nav-links.active{
@@ -348,29 +344,32 @@ right:0;
 
 .nav-links a{
 font-size:18px;
-width:auto;
-padding:12px 24px;
-margin-bottom:10px; /* más juntos */
 color:#fff;
 text-decoration:none;
-text-align:right;
+text-align:center;
+margin:2px 0; /* más juntos verticalmente */
+padding:12px 0; /* sin margen horizontal */
+width:100%; /* ocupan todo el ancho disponible del centro */
+max-width:280px;
 }
 
 .nav-social{
 display:flex;
 gap:16px;
-margin:16px 24px 0 0; /* misma línea, separados */
+margin:16px 0 0 0; /* separacion de RRSS y centrado */
+justify-content:center;
 }
 
 .catalogue-btn{
-background:#fff;
+background:#ffffff;
 color:#000;
 border:none;
-padding:6px 14px; /* ajustado al texto */
-margin-bottom:10px;
-text-align:right;
+padding:8px 24px; /* ajustado al texto */
+margin:6px 0;
 border-radius:40px;
 font-weight:500;
+text-align:center;
+width:auto;
 }
 
 .close-menu{
@@ -395,6 +394,7 @@ border-radius:3px;
 @media(min-width:901px){
 .close-menu{
 display:none !important;
+}
 }
 }
 
