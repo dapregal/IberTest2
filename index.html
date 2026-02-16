@@ -217,11 +217,13 @@ h1 {
 }
 
 .info-box {
-  padding: 30px 22px;
-  border: 1px solid rgba(0,0,0,0.08);
+  padding: 30px 30px;
   border-radius: 40px;
-  background: #fafafa;
+  background: #cfcfcf;
+}.info-box p {
+  text-align: justify;
 }
+
 
 /* ================= FOOTER ================= */
 footer {
@@ -385,7 +387,7 @@ footer {
     right: -100%;
     width: 100%;
     height: 100vh;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.9);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -485,6 +487,41 @@ footer {
   .language-selector-mobile { display: none !important; }
 }
 
+
+
+
+
+
+.info-box {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 40px;
+  min-height: 1000px;
+  padding: 30px;
+  color: #fff;
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.info-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  /*background: rgba(0,0,0,0.35);  oscurece un poco la imagen para mejorar la legibilidad */
+  border-radius: 40px;
+}
+
+.info-content {
+  position: relative; /* para estar por encima del ::before */
+  z-index: 1;
+  text-align: justify;
+}
+
+
 </style>
 </head>
 
@@ -555,18 +592,42 @@ footer {
 </section>
 
 <section class="white-section">
-  <h2>Experience and Tradition</h2>
-  <p>Iber Cutlery unites craftsmanship and technology to deliver the highest-quality cutlery. With decades of expertise, our products embody the perfect balance between innovation, design, and Portuguese tradition.</p>
+  <h2>Our Expertise</h2>
+  <p>Iber Cutlery combines artisanal craftsmanship with advanced technology to deliver premium-quality cutlery. With decades of experience, our products represent the perfect harmony of innovation, design, and Portuguese tradition.</p>
   <div class="box-grid">
-    <div class="info-box"><h3>Collections</h3><p>A wide range of contemporary and classic designs tailored to different lifestyles and table settings.</p></div>
-    <div class="info-box"><h3>Finishes</h3><p>From mirror to satin, brushed or coated — every finish is perfected for beauty, comfort, and durability.</p></div>
-    <div class="info-box"><h3>Sets</h3><p>Elegant sets that combine precision, ergonomics, and visual harmony to complement every occasion.</p></div>
+  <div class="info-box" style="background-image:url('img.png');">
+    <div class="info-content">
+      <h3>D’Art – Iber Exclusive Brand</h3>
+      <p>
+        D’Art represents the pinnacle of Portuguese cutlery craftsmanship. Each piece embodies the expertise of skilled artisans and reflects the elegance, durability, and refined design expected from a premium collection.
+      </p>
+    </div>
   </div>
+
+  <div class="info-box" style="background-image:url('img.png');">
+    <div class="info-content">
+      <h3>Multiple Finishes</h3>
+      <p>
+        Available in Brilho (Gloss), Areia (Velvet), Fosco (Matte), and Pedras (Vintage) textures. Each finish can also be enhanced with PVD coatings in luxurious colors: Gold, Copper, Anthracite, Champagne, and Cobalt.
+      </p>
+    </div>
+  </div>
+
+  <div class="info-box" style="background-image:url('img.png');">
+    <div class="info-content">
+      <h3>Tailored Solutions</h3>
+      <p>
+        Production services for distributors, private-label brands, or custom projects. From engraving and stamping to thousands of design and finish combinations, our solutions allow you to create unique, high-quality cutlery that perfectly fits your client’s vision.
+      </p>
+    </div>
+  </div>
+</div>
+
 </section>
 
 <section class="white-section">
-  <h2>Made in Portugal, Undeniable on Your Table</h2>
-  <p>Rooted in the esteemed Portuguese tradition, we export the Lusitanian identity worldwide, standing as an undeniable reference on any table. We present the finest solutions in terms of usability and ergonomics, combining functionality and refinement in details through the constant pursuit of innovative designs that cater to various lifestyles, whether dynamic and avant-garde or luxurious and exclusive.</p>
+ <h2>Made in Portugal, Unmistakable on Your Table</h2>
+ <p>Rooted in Portugal’s renowned craftsmanship, we bring the Lusitanian spirit to tables around the world. Our cutlery blends ergonomic functionality with refined details, reflecting a constant pursuit of innovative designs that suit every lifestyle—whether modern and dynamic or luxurious and exclusive.</p>
 </section>
 
 <footer>
