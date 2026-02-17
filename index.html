@@ -536,7 +536,7 @@ footer {
 }
 
 .info-btn:hover {
-  background: rgb(73, 73, 73);
+  background: rgba(0, 0, 0, 0.55);
   transform: translateY(-2px);
 }
 
@@ -599,19 +599,20 @@ footer {
   <div class="overlay">
     <div class="hero-inner">
       <div class="logo-hero"><img src="logoIBER-blanco.png" alt="Iber Cutlery Logo"></div>
-      <h1>Cutlery Manufacturing Solutions</h1>
-      <p class="lead">Engineering excellence from Portugal to the world.</p>
+      <h1 data-i18n="hero_title">Cutlery Manufacturing Solutions</h1>
+      <p class="lead" data-i18n="hero_lead">Engineering excellence from Portugal to the world.</p>
       <div class="actions">
-        <a href="catalogue.html" class="btn">Catalogue</a>
-        <a href="services.html" class="btn">Services</a>
+        <a href="catalogue.html" class="btn" data-i18n="btn_catalogue">Catalogue</a>
+        <a href="services.html" class="btn" data-i18n="btn_services">Services</a>
       </div>
     </div>
   </div>
 </section>
 
 <section class="white-section">
-  <h2>Our Expertise</h2>
-  <p>Iber Cutlery combines artisanal craftsmanship with advanced technology to deliver premium-quality cutlery. With decades of experience, our products represent the perfect harmony of innovation, design, and Portuguese tradition.</p>
+  <h2 data-i18n="ourexpertise">Our Expertise</h2>
+  <p data-i18n="ourexpertise_text">Iber Cutlery combines artisanal craftsmanship with advanced technology to deliver premium-quality cutlery. With decades of experience, our products represent the perfect harmony of innovation, design, and Portuguese tradition.</p>
+  
   <div class="box-grid">
   <div class="info-box" style="background-image:url('img.png');">
     <div class="info-content">
@@ -619,7 +620,7 @@ footer {
       <p>
         D’Art represents the pinnacle of Portuguese cutlery craftsmanship. Each piece embodies the expertise of skilled artisans and reflects the elegance, durability, and refined design expected from a premium collection.
       </p>
-          <a href="#" class="info-btn">Descubre más</a>
+          <a href="#" class="info-btn" data-i18n="info_btn">Descubre más</a>
 
     </div>
   </div>
@@ -630,7 +631,7 @@ footer {
       <p>
         Available in Brilho (Gloss), Areia (Velvet), Fosco (Matte), and Pedras (Vintage) textures. Each finish can also be enhanced with PVD coatings in luxurious colors: Gold, Copper, Anthracite, Champagne, and Cobalt.
       </p>
-          <a href="#" class="info-btn">Descubre más</a>
+          <a href="#" class="info-btn"data-i18n="info_btn">Descubre más</a>
 
     </div>
   </div>
@@ -641,7 +642,7 @@ footer {
       <p>
         Production services for distributors, private-label brands, or custom projects. From engraving and stamping to thousands of design and finish combinations, our solutions allow you to create unique, high-quality cutlery that perfectly fits your client’s vision.
       </p>
-          <a href="#" class="info-btn">Descubre más</a>
+          <a href="#" class="info-btn"data-i18n="info_btn">Descubre más</a>
 
     </div>
   </div>
@@ -752,6 +753,78 @@ document.addEventListener('click', () => { langMenu.style.display = 'none'; });
 
 /* ================= COPYRIGHT YEAR ================= */
 document.getElementById("copyright-year").textContent = new Date().getFullYear();
+
+
+
+/* ================= TRADUCCIÓN ================= */
+
+
+const translations = {
+  en: {
+    hero_title: "Cutlery Manufacturing Solutions",
+    hero_lead: "Engineering excellence from Portugal to the world.",
+    btn_catalogue: "Catalogue",
+    btn_services: "Services",
+    ourexpertise: "Our Expertise",
+    ourexpertise_text: "Iber Cutlery combines artisanal craftsmanship with advanced technology to deliver premium-quality cutlery. With decades of experience, our products represent the perfect harmony of innovation, design, and Portuguese tradition.",
+    info_btn: "Discover more"
+  },
+  es: {
+    hero_title: "Soluciones en Fabricación de Cubiertos",
+    hero_lead: "Excelencia en ingeniería desde Portugal para el mundo.",
+    btn_catalogue: "Catálogo",
+    btn_services: "Servicios",
+    ourexpertise: "Nuestra Experiencia",
+    ourexpertise_text: "Iber Cutlery combina la artesanía con tecnología avanzada para ofrecer cubiertos de primera calidad. Con décadas de experiencia, nuestros productos representan la armonía perfecta entre innovación, diseño y tradición portuguesa.",
+    info_btn: "Descubre más"
+  },
+  pt: {
+    hero_title: "Soluções em Fabricação de Talheres",
+    hero_lead: "Excelência em engenharia de Portugal para o mundo.",
+    btn_catalogue: "Catálogo",
+    btn_services: "Serviços",
+    ourexpertise: "Nossa Experiência",
+    ourexpertise_text: "Iber Cutlery combina artesanato com tecnologia avançada para fornecer talheres de alta qualidade. Com décadas de experiência, nossos produtos representam a perfeita harmonia entre inovação, design e tradição portuguesa.",
+    info_btn: "Descubra mais"
+  }
+};
+
+function setLanguage(lang) {
+  // Recorrer todos los elementos con data-i18n
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if(translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+
+  // Actualizar botones de idioma
+  langBtn.textContent = lang.toUpperCase() + " ▼";
+  document.querySelectorAll(".lang-mobile").forEach(btn => btn.textContent = lang.toUpperCase());
+
+  // Guardar elección
+  localStorage.setItem("selectedLang", lang);
+}
+
+
+
+document.querySelectorAll("#langMenu li a").forEach(a => {
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+    setLanguage(a.textContent.toLowerCase());
+    langMenu.style.display = "none";
+  });
+});
+
+// Mobile
+document.querySelectorAll(".lang-mobile").forEach(btn => {
+  btn.addEventListener("click", () => setLanguage(btn.textContent.toLowerCase()));
+});
+
+// Cargar idioma guardado o por defecto inglés
+const savedLang = localSto
+
+
 </script>
 
 </body>
