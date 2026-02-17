@@ -227,16 +227,17 @@ h1 {
 
 /* ================= FOOTER ================= */
 footer {
-  background: #0b1220;
+  background: #000000;
   color: #fff;
   padding-top: 60px;
+  font-size: 13px;
 }
 
 .footer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: 50px;
+  margin-bottom: 20px;
 }
 
 .footer-logo img {
@@ -246,7 +247,6 @@ footer {
 .footer-social {
   display: flex;
   gap: 14px;
-  margin-top: 10px;
 }
 
 .footer-social i {
@@ -260,7 +260,7 @@ footer {
 
 .footer-legal {
   background: #000;
-  padding: 16px;
+  padding: 20px;
   text-align: center;
   font-size: 13px;
 }
@@ -497,8 +497,8 @@ footer {
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  min-height: 700px;
-  padding: 30px;
+  min-height:900px;
+  padding: 45px;
   color: #fff;
   display: flex;
   align-items: top;
@@ -524,7 +524,6 @@ footer {
 
 .info-btn {
   display: inline-block;
-  margin-top: 10px;
   padding: 14px 36px;
   border-radius: 60px;
   background: rgba(0, 0, 0, 0.15);
@@ -658,20 +657,20 @@ footer {
 <footer>
   <div class="container footer-grid">
     <div>
-      <br>
-      <div class="footer-logo"><img src="logoIBER.png" alt="Iber Cutlery"></div>
-      <br>
+      <div class="footer-logo"><img src="logoIBER-blanco.png" alt="Iber Cutlery"></div>
       <div class="footer-about">Precision and tradition in cutlery manufacturing. Headquartered in Braga, Portugal.</div>
     </div>
 
     <div>
-      <h3>Contact</h3>
+      <h3>Contact</h3> <br>
       <p>R. da Gandra 1782, 4805-537 Barco, Portugal</p>
       <p>+351 253 579 523</p>
     </div>
 
     <div>
+      
       <h3>Follow Us</h3>
+      <br>
       <div class="footer-social">
         <a href="https://www.facebook.com/ibercutlery" target="_blank"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.instagram.com/ibercutlery/" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -757,4 +756,3 @@ document.getElementById("copyright-year").textContent = new Date().getFullYear()
 
 </body>
 </html>
-
