@@ -461,149 +461,160 @@ footer {
 
 
 /* ================= ESTILOS DE DART ================= */
- /* Títulos de sección */
-  .section-title {
-    text-align: center;
-    font-size: 2rem;
-    margin: 40px 0 20px;
-    font-weight: 600;
+/* GENERAL */
+.dart-section,
+.dart-finishes,
+.dart-gallery{
+  padding: 100px 20px;
+}
+
+.container-narrow{
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.dart-title{
+  font-size: 42px;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.dart-text{
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* FINISHES */
+.finish-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 40px;
+  margin-top: 70px;
+}
+
+.finish-card{
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.finish-card img{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.finish-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.2));
+  color: #fff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* GALLERY */
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 0;
+  margin-top: 60px;
+}
+
+.gallery-item{
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.gallery-item img{
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: 0.6s;
+}
+
+.gallery-item:hover img{
+  transform: scale(1.05);
+}
+
+.gallery-label{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  font-size: 18px;
+}
+
+/* MODAL */
+.model-modal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.model-content{
+  width: 90%;
+  max-width: 1000px;
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.model-content img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-info{
+  padding: 60px;
+  color: #fff;
+}
+
+.close-modal{
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .gallery-grid{
+    grid-template-columns: repeat(2,1fr);
   }
 
-  /* ================= HERO ================= */
-  .hero-image {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 2; /* ancho:alto 4:2 */
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    overflow: hidden;
+  .model-content{
+    grid-template-columns: 1fr;
   }
 
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+  .modal-info{
+    padding: 30px;
   }
 
-  .hero-image.right-text .hero-overlay {
-    background: linear-gradient(to left, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 50%);
+  .finish-card img,
+  .gallery-item img{
+    height: 300px;
   }
-
-  .hero-text {
-    position: relative;
-    z-index: 1;
-    max-width: 45%;
-    color: #fff;
-    padding: 20px;
-  }
-
-  .hero-image.left-text .hero-text { margin-left: 20px; }
-  .hero-image.right-text .hero-text { margin-right: 20px; margin-left: auto; text-align: right; }
-
-  /* ================= ACABADOS ================= */
-  .finishes-description {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 30px;
-    font-size: 1rem;
-  }
-
-  .finishes-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 60px;
-  }
-
-  .finish-card {
-    width: 180px;
-    text-align: center;
-  }
-
-  .finish-card img {
-    width: 100%;
-    aspect-ratio: 1/3; /* alto triple que ancho */
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-    margin-bottom: 8px;
-  }
-
-  .finish-card h4 {
-    font-size: 1rem;
-    font-weight: 500;
-  }
-
-  /* ================= GALERÍA ================= */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 60px;
-  }
-
-  .gallery-item {
-    position: relative;
-    cursor: pointer;
-    overflow: hidden;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-  }
-
-  .gallery-item:hover img {
-    transform: scale(1.05);
-  }
-
-  /* ================= POPUP ================= */
-  .gallery-popup {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.8);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-  }
-
-  .popup-content {
-    position: relative;
-    background: #fff;
-    padding: 20px;
-    max-width: 600px;
-    width: 90%;
-    border-radius: 12px;
-    text-align: center;
-  }
-
-  .popup-content img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 16px;
-    border-radius: 8px;
-  }
-
-  .close-popup {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-
-
-
+}
 
 
 
@@ -681,7 +692,6 @@ footer {
         <a href="catalogue.html" class="btn" data-i18n="btn_catalogue">Collections</a>
         <a href="services.html" class="btn" data-i18n="btn_services">Inspiration</a>
         <a href="services.html" class="btn" data-i18n="btn_services">Finishes</a>
-        </a>
       </div>
     </div>
   </div>
@@ -690,100 +700,155 @@ footer {
 
 
   <!------------------------- HTML SECCIÓN DART----------------------------------->
-
-<section class="meetdart-hero">
-  <h2 class="section-title">Meet D’Art</h2>
-
-  <!-- Imagen 1 -->
-  <div class="hero-image left-text" style="background-image:url('placeholder.png');">
-    <div class="hero-overlay"></div>
-    <div class="hero-text">
-      <h3>D’Art – Iber Exclusive Brand</h3>
-      <p>Our proprietary collection, blending Portuguese craftsmanship with contemporary design to create cutlery that inspires.</p>
-    </div>
-  </div>
-
-  <!-- Imagen 2 -->
-  <div class="hero-image right-text" style="background-image:url('placeholder.png');">
-    <div class="hero-overlay"></div>
-    <div class="hero-text">
-      <h3>Timeless Elegance</h3>
-      <p>Every piece is crafted to elevate the table, combining functional precision with refined aesthetics.</p>
-    </div>
-  </div>
-
-  <!-- Imagen 3 -->
-  <div class="hero-image left-text" style="background-image:url('placeholder.png');">
-    <div class="hero-overlay"></div>
-    <div class="hero-text">
-      <h3>Design That Inspires</h3>
-      <p>D’Art designs integrate seamlessly into dining experiences, leaving a lasting impression on every guest.</p>
-    </div>
+<!-- ================= DART PRESENTATION ================= -->
+<section class="dart-section">
+  <div class="container-narrow">
+    <h2 class="dart-title">DART — Precision Refined</h2>
+    <p class="dart-text">
+      Dart is Iber Cutlery’s signature collection — a statement of contemporary elegance shaped by Portuguese craftsmanship.
+      Designed for refined tables and demanding hospitality environments, Dart blends technical precision with timeless aesthetics.
+      <br><br>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.
+    </p>
   </div>
 </section>
 
-<!-- ================= SECCIÓN DE ACABADOS ================= -->
-<section class="finishes">
-  <h2 class="section-title">Our Finishes</h2>
-  <div class="finishes-description">
-    <p>Surface is not only visual — it is tactile and expressive. D’Art finishes allow each collection to convey character.</p>
-    <p>PVD technology opens limitless possibilities, offering sophisticated tones and enhanced durability.</p>
+
+<!-- ================= FINISHES ================= -->
+<section class="dart-finishes">
+  <div class="container-narrow">
+    <h2 class="dart-title">Finishes & Surface Expressions</h2>
+    <p class="dart-text">
+      Each Dart model is available in multiple surface finishes, allowing you to create a distinctive table identity.
+      From polished brilliance to textured matte surfaces and advanced PVD coatings, the possibilities are extensive.
+    </p>
   </div>
-  <div class="finishes-grid">
+
+  <div class="finish-grid">
+
     <div class="finish-card">
-      <img src="placeholder.png" alt="Brilho Gloss">
-      <h4>Brilho (Gloss)</h4>
+      <img src="img.png" alt="">
+      <div class="finish-overlay">
+        <h3>Brilho</h3>
+        <p>High-gloss mirror polish. Elegant and reflective, ideal for formal dining settings.</p>
+      </div>
     </div>
+
     <div class="finish-card">
-      <img src="placeholder.png" alt="Areia Velvet">
-      <h4>Areia (Velvet)</h4>
+      <img src="img.png" alt="">
+      <div class="finish-overlay">
+        <h3>Areia</h3>
+        <p>Velvet texture with subtle matte softness. Modern and tactile.</p>
+      </div>
     </div>
+
     <div class="finish-card">
-      <img src="placeholder.png" alt="Fosco Matte">
-      <h4>Fosco (Matte)</h4>
+      <img src="img.png" alt="">
+      <div class="finish-overlay">
+        <h3>Fosco</h3>
+        <p>Minimal matte finish. Clean, architectural, understated luxury.</p>
+      </div>
     </div>
+
     <div class="finish-card">
-      <img src="placeholder.png" alt="Pedras Vintage">
-      <h4>Pedras (Vintage)</h4>
+      <img src="img.png" alt="">
+      <div class="finish-overlay">
+        <h3>Pedras</h3>
+        <p>Vintage stone-washed texture. Character and personality in every piece.</p>
+      </div>
     </div>
+
+    <div class="finish-card">
+      <img src="img.png" alt="">
+      <div class="finish-overlay">
+        <h3>PVD Coatings</h3>
+        <p>Gold, Copper, Champagne, Anthracite, Cobalt. Ultra-durable luxury finishes.</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ================= GALERÍA DE INSPIRACIÓN ================= -->
-<section class="gallery">
-  <h2 class="section-title">Inspiration Gallery</h2>
+
+<!-- ================= MODEL GALLERY ================= -->
+<section class="dart-gallery">
+  <div class="container-narrow">
+    <h2 class="dart-title">Collections</h2>
+  </div>
+
   <div class="gallery-grid">
-    <!-- Cada cubierto -->
-    <div class="gallery-item" data-title="Fork Model A" data-info="Elegant fork with balanced weight.">
-      <img src="placeholder.png" alt="Fork Model A">
+
+    <!-- 10 Models -->
+    <div class="gallery-item" onclick="openModal('Model One')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model One</div>
     </div>
-    <div class="gallery-item" data-title="Spoon Model B" data-info="Spoon with soft curves and ergonomic design.">
-      <img src="placeholder.png" alt="Spoon Model B">
+
+    <div class="gallery-item" onclick="openModal('Model Two')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model Two</div>
     </div>
-    <div class="gallery-item" data-title="Knife Model C" data-info="Knife with precision edge and refined finish.">
-      <img src="placeholder.png" alt="Knife Model C">
+
+    <div class="gallery-item" onclick="openModal('Model Three')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model Three</div>
     </div>
-    <div class="gallery-item" data-title="Fork Model D" data-info="Modern fork design for premium dining.">
-      <img src="placeholder.png" alt="Fork Model D">
+
+    <div class="gallery-item" onclick="openModal('Model Four')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model Four</div>
     </div>
-    <div class="gallery-item" data-title="Spoon Model E" data-info="Artistic spoon for unique table settings.">
-      <img src="placeholder.png" alt="Spoon Model E">
+
+    <div class="gallery-item" onclick="openModal('Model Five')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model Five</div>
     </div>
-    <div class="gallery-item" data-title="Knife Model F" data-info="Knife crafted with elegance and functionality.">
-      <img src="placeholder.png" alt="Knife Model F">
+
+    <div class="gallery-item" onclick="openModal('Model Six')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model Six</div>
     </div>
+
+    <div class="gallery-item" onclick="openModal('Model Seven')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model Seven</div>
+    </div>
+
+    <div class="gallery-item" onclick="openModal('Model Eight')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model Eight</div>
+    </div>
+
+    <div class="gallery-item" onclick="openModal('Model Nine')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model Nine</div>
+    </div>
+
+    <div class="gallery-item" onclick="openModal('Model Ten')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model Ten</div>
+    </div>
+
   </div>
 </section>
 
-<!-- ================= POPUP DE GALERÍA ================= -->
-<div class="gallery-popup" id="galleryPopup">
-  <div class="popup-content">
-    <span class="close-popup">&times;</span>
-    <img id="popupImage" src="" alt="">
-    <h3 id="popupTitle"></h3>
-    <p id="popupInfo"></p>
+
+<!-- ================= MODAL ================= -->
+<div id="modelModal" class="model-modal">
+  <div class="model-content">
+    <span class="close-modal" onclick="closeModal()">✕</span>
+    <img src="img.png" id="modalImage">
+    <div class="modal-info">
+      <h3 id="modalTitle"></h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Premium stainless steel construction. Available in all Dart finishes.
+      </p>
+    </div>
   </div>
 </div>
+
 
 
 
@@ -830,7 +895,7 @@ footer {
 </footer>
 
 <div class="cookie-popup" id="cookiePopup" style="display:none;">
-  <div>We use cookies to ensure you get the best experience on our website. By continuing to browse, you accept our <a href="privacy.html" style="color:#fff;text-decoration:underline;">Privacy Policy</a>.</div>
+  <div>We use cookies to ensure you get the best experience on our website. By continuing to browse, you accept our <a href="privacy.html" style="color:#fff;text-decoration:underline;">Privacy Policy</a></div>
   <div class="cookie-buttons">
     <button class="cookie-btn cookie-accept" id="acceptCookies">Accept</button>
     <button class="cookie-btn cookie-reject" id="rejectCookies">Decline</button>
@@ -899,37 +964,23 @@ document.getElementById("copyright-year").textContent = new Date().getFullYear()
 
 
 
-
+  
 
 
 
 /* ================= JS DART ================= */
-const galleryItems = document.querySelectorAll('.gallery-item');
-  const popup = document.getElementById('galleryPopup');
-  const popupImage = document.getElementById('popupImage');
-  const popupTitle = document.getElementById('popupTitle');
-  const popupInfo = document.getElementById('popupInfo');
-  const closepopupBtn = document.querySelector('.close-popup');
-
-  galleryItems.forEach(item => {
-    item.addEventListener('click', () => {
-      popup.style.display = 'flex';
-      popupImage.src = item.querySelector('img').src;
-      popupTitle.textContent = item.dataset.title;
-      popupInfo.textContent = item.dataset.info;
-    });
-  });
-
-  closepopupBtn.addEventListener('click', () => popup.style.display = 'none');
-
-  popup.addEventListener('click', (e) => {
-    if(e.target === popup) popup.style.display = 'none';
-  });
 
 
+function openModal(title){
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modelModal").style.display = "flex";
+  document.body.classList.add("no-scroll");
+}
 
-
-
+function closeModal(){
+  document.getElementById("modelModal").style.display = "none";
+  document.body.classList.remove("no-scroll");
+}
 
 
 
