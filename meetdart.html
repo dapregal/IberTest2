@@ -31,7 +31,7 @@
           <div class="close-menu" id="closeMenu"><i class="fas fa-times"></i></div>
 
           <a href="index.html">Home</a>
-          <a href="meetdart.html">Meet Dart</a>
+          <a href="meetdart.html">Meet D'Art</a>
           <a href="services.html">Services</a>
           <a href="about.html">About Us</a>
           <a href="contact.html">Contact</a>
@@ -67,7 +67,7 @@
 
 <section class="hero">
   <video autoplay muted loop playsinline>
-    <source src="meetdart.mp4" type="video/mp4">
+    <source src="meetdat.mp4" type="video/mp4">
   </video>
 
   <div class="overlay">
@@ -75,9 +75,8 @@
       <div class="logo-hero"><img src="logodart.png" alt="Iber Cutlery Logo"></div>
       <p class="lead" data-i18n="hero_lead">Peak of portuguese craftsmanship</p>
       <div class="actions">
-        <a href="catalogue.html" class="btn" data-i18n="btn_catalogue">Collections</a>
-        <a href="services.html" class="btn" data-i18n="btn_services">Inspiration</a>
-        <a href="services.html" class="btn" data-i18n="btn_services">Finishes</a>
+        <a href="meetdart.html#collections" class="btn" data-i18n="btn_catalogue">Collections</a>
+        <a href="services.html#acabados" class="btn" data-i18n="btn_services">Finishes</a>
       </div>
     </div>
   </div>
@@ -89,132 +88,61 @@
 <!-- ================= DART PRESENTATION ================= -->
 <section class="dart-section"  id="introdart">
   <div class="container-narrow">
-    <h2 class="dart-title">DART — Precision Refined</h2>
     <p class="dart-text">
-      Dart is Iber Cutlery’s signature collection — a statement of contemporary elegance shaped by Portuguese craftsmanship.
-      Designed for refined tables and demanding hospitality environments, Dart blends technical precision with timeless aesthetics.
+      D'Art is Iber Cutlery’s signature collection — a statement of contemporary elegance shaped by Portuguese craftsmanship.
+      Designed for refined tables and demanding hospitality environments. 
       <br><br>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
-      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.
+      Traditional and timeless aesthetics.
     </p>
   </div>
 </section>
 
 
-<!-- ================= FINISHES ================= -->
-<section class="dart-finishes" id="acabados">
-  <div class="container-narrow">
-    <h2 class="dart-title">Finishes & Surface Expressions</h2>
-    <p class="dart-text">
-      Each Dart model is available in multiple surface finishes, allowing you to create a distinctive table identity.
-      From polished brilliance to textured matte surfaces and advanced PVD coatings, the possibilities are extensive.
-    </p>
-  </div>
-
-  <div class="finish-grid">
-
-    <div class="finish-card">
-      <img src="img.png" alt="">
-      <div class="finish-overlay">
-        <h3>Brilho</h3>
-        <p>High-gloss mirror polish. Elegant and reflective, ideal for formal dining settings.</p>
-      </div>
-    </div>
-
-    <div class="finish-card">
-      <img src="img.png" alt="">
-      <div class="finish-overlay">
-        <h3>Areia</h3>
-        <p>Velvet texture with subtle matte softness. Modern and tactile.</p>
-      </div>
-    </div>
-
-    <div class="finish-card">
-      <img src="img.png" alt="">
-      <div class="finish-overlay">
-        <h3>Fosco</h3>
-        <p>Minimal matte finish. Clean, architectural, understated luxury.</p>
-      </div>
-    </div>
-
-    <div class="finish-card">
-      <img src="img.png" alt="">
-      <div class="finish-overlay">
-        <h3>Pedras</h3>
-        <p>Vintage stone-washed texture. Character and personality in every piece.</p>
-      </div>
-    </div>
-
-    <div class="finish-card">
-      <img src="img.png" alt="">
-      <div class="finish-overlay">
-        <h3>PVD Coatings</h3>
-        <p>Gold, Copper, Champagne, Anthracite, Cobalt. Ultra-durable luxury finishes.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 
 <!-- ================= MODEL GALLERY ================= -->
-<section class="dart-gallery">
+<section class="dart-gallery" id="collections">
   <div class="container-narrow">
-    <h2 class="dart-title">Collections</h2>
+    <h1 class="dart-title" >Collections</h1>
   </div>
 
   <div class="gallery-grid">
 
-    <!-- 10 Models -->
-    <div class="gallery-item" onclick="openModal('Model One')">
-      <img src="img.png" alt="">
-      <div class="gallery-label">Model One</div>
-    </div>
+<div class="gallery-item" 
+     onclick="openModal('img.png','Model One','Descripción del modelo uno')">
+  <img src="img.png" alt="">
+  <div class="gallery-label">Model One</div>
+</div>
 
-    <div class="gallery-item" onclick="openModal('Model Two')">
-      <img src="img.png" alt="">
-      <div class="gallery-label">Model Two</div>
-    </div>
+<div class="gallery-item" 
+     onclick="openModal('img2.png','Model 2','Descripción del 2222 uno')">
+  <img src="img2.png" alt="">
+  <div class="gallery-label">Model 2</div>
+</div>
 
-    <div class="gallery-item" onclick="openModal('Model Three')">
-      <img src="img.png" alt="">
-      <div class="gallery-label">Model Three</div>
-    </div>
+<div class="gallery-item" 
+     onclick="openModal('img.png','Model One','Descripción del modelo uno')">
+  <img src="img.png" alt="">
+  <div class="gallery-label">Model Three</div>
+</div>
 
-    <div class="gallery-item" onclick="openModal('Model Four')">
-      <img src="img.png" alt="">
-      <div class="gallery-label">Model Four</div>
-    </div>
+<div class="gallery-item" 
+     onclick="openModal('img.png','Model One','Descripción del modelo uno')">
+  <img src="img.png" alt="">
+  <div class="gallery-label">Model 323</div>
+</div>
 
-    <div class="gallery-item" onclick="openModal('Model Five')">
-      <img src="img.png" alt="">
-      <div class="gallery-label">Model Five</div>
-    </div>
+<div class="gallery-item" 
+     onclick="openModal('img.png','Model One','Descripción del modelo uno')">
+  <img src="img.png" alt="">
+  <div class="gallery-label">Model 4343</div>
+</div>
 
-    <div class="gallery-item" onclick="openModal('Model Six')">
-      <img src="img.png" alt="">
-      <div class="gallery-label">Model Six</div>
-    </div>
-
-    <div class="gallery-item" onclick="openModal('Model Seven')">
-      <img src="img.png" alt="">
-      <div class="gallery-label">Model Seven</div>
-    </div>
-
-    <div class="gallery-item" onclick="openModal('Model Eight')">
-      <img src="img.png" alt="">
-      <div class="gallery-label">Model Eight</div>
-    </div>
-
-    <div class="gallery-item" onclick="openModal('Model Nine')">
-      <img src="img.png" alt="">
-      <div class="gallery-label">Model Nine</div>
-    </div>
-
-    <div class="gallery-item" onclick="openModal('Model Ten')">
-      <img src="img.png" alt="">
-      <div class="gallery-label">Model Ten</div>
-    </div>
+<div class="gallery-item" 
+     onclick="openModal('img.png','Model One','Descripción del modelo uno')">
+  <img src="img.png" alt="">
+  <div class="gallery-label">Model 5</div>
+</div>
 
   </div>
 </section>
@@ -227,9 +155,7 @@
     <img src="img.png" id="modalImage">
     <div class="modal-info">
       <h3 id="modalTitle"></h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Premium stainless steel construction. Available in all Dart finishes.
+      <p id="modalDescription">
       </p>
     </div>
   </div>
@@ -357,19 +283,29 @@ document.getElementById("copyright-year").textContent = new Date().getFullYear()
 /* ================= JS DART ================= */
 
 
-function openModal(title){
+function openModal(image, title, description) {
+
+  document.getElementById("modalImage").src = image;
   document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalDescription").textContent = description;
+
   document.getElementById("modelModal").style.display = "flex";
   document.body.classList.add("no-scroll");
 }
 
-function closeModal(){
+function closeModal() {
   document.getElementById("modelModal").style.display = "none";
   document.body.classList.remove("no-scroll");
 }
 
 
-
+// Cerrar modal al pulsar fuera del contenido
+const modal = document.getElementById("modelModal");
+modal.addEventListener("click", (e) => {
+  if(e.target === modal){  // Solo si clic fuera del contenido
+    closeModal();
+  }
+});
 
 </script>
 
