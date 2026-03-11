@@ -13,8 +13,6 @@
 
 <link rel="stylesheet" href="styles.css">
 
-
-
 </head>
 
 <body>
@@ -38,7 +36,6 @@
           <a href="contact.html">Contact</a>
           <a href="https://drive.google.com/file/d/1WoMRmmUtPPjQzyLjRYjJHznSljWQ4U9n/view?usp=drive_link" class="catalogue-btn">Catalogue</a>
 
-          <!-- LANGUAGE SELECTOR DESKTOP -->
           <div class="language-selector-desktop">
             <button id="langBtn">EN ▼</button>
             <ul id="langMenu" class="lang-menu">
@@ -48,7 +45,6 @@
             </ul>
           </div>
 
-          <!-- LANGUAGE SELECTOR MOBILE -->
           <div class="language-selector-mobile">
             <button class="lang-mobile">EN</button>
             <button class="lang-mobile">ES</button>
@@ -73,35 +69,25 @@
 
   <div class="overlay">
     <div class="hero-inner">
-      <div class="logo-hero"><img src="ferfil.png" alt="Iber Cutlery Logo"></div>
-      <p class="lead" data-i18n="hero_lead">your s ervice, our priority</p>
+      <div class="logo-hero"><img src="ferfil.png" alt="Ferfil Cutlery Logo" Style="width:clamp(230px, 180vw, 200px)"></div><br>
+      <p class="lead" data-i18n="hero_lead"><i>Fertuzinho e Filhos</i></p>
       <div class="actions">
-        <a href="meetdart.html#collections" class="btn" data-i18n="btn_catalogue">Collections</a>
+        <a href="ferfil.html#collections" class="btn" data-i18n="btn_catalogue">Collections</a>
           <a href="careuse.html" class="btn" data-i18n="btn_services">Care & Use</a>
       </div>
     </div>
   </div>
 </section>
 
-
-
-  <!------------------------- HTML SECCIÓN DART----------------------------------->
-<!-- ================= DART PRESENTATION ================= -->
 <section class="dart-section"  id="introdart">
   <div class="container-narrow">
     <p class="dart-text">
-      D'Art is Iber Cutlery’s signature collection — a statement of contemporary elegance shaped by Portuguese craftsmanship.
-      Designed for refined tables and demanding hospitality environments. 
-      <br><br>
-      Traditional and timeless aesthetics.
+      Ferfil draws on the historic cutlery tradition of Guimarães, inspired by the family name Fertuzinho e Filhos. The brand offers robust, practical cutlery designed for service use.
+Its European manufacturing ensures consistent performance at a competitive price. <br><br> Ferfil is the smart choice for professional use — simple, reliable, and built to last.
     </p>
   </div>
 </section>
 
-
-
-
-<!-- ================= MODEL GALLERY ================= -->
 <section class="dart-gallery" id="collections">
   <div class="container-narrow">
     <h1 class="dart-title" >Collections</h1>
@@ -148,8 +134,6 @@
   </div>
 </section>
 
-
-<!-- ================= MODAL ================= -->
 <div id="modelModal" class="model-modal">
   <div class="model-content">
     <span class="close-modal" onclick="closeModal()">✕</span>
@@ -161,18 +145,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <footer>
   <div class="container footer-grid">
@@ -273,19 +245,9 @@ document.addEventListener('click', () => { langMenu.style.display = 'none'; });
 /* ================= COPYRIGHT YEAR ================= */
 document.getElementById("copyright-year").textContent = new Date().getFullYear();
 
-
-
-
-
-  
-
-
-
 /* ================= JS DART ================= */
 
-
 function openModal(image, title, description) {
-
   document.getElementById("modalImage").src = image;
   document.getElementById("modalTitle").textContent = title;
   document.getElementById("modalDescription").textContent = description;
@@ -298,7 +260,6 @@ function closeModal() {
   document.getElementById("modelModal").style.display = "none";
   document.body.classList.remove("no-scroll");
 }
-
 
 // Cerrar modal al pulsar fuera del contenido
 const modal = document.getElementById("modelModal");

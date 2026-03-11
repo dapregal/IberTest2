@@ -3,22 +3,128 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-<title>Iber Cutlery — Precision & Tradition | Made in Portugal</title>
-<meta name="description" content="Iber Cutlery — Portuguese cutlery manufacturer. Precision engineering, handcrafted finishes and industrial production. B2B catalog and corporate information."/>
+<title>Contact Us — Iber Cutlery | Precision & Tradition</title>
+<meta name="description" content="Contact Iber Cutlery. Portuguese cutlery manufacturer. Get in touch for B2B inquiries, corporate information, and support."/>
 <meta name="theme-color" content="#0b1220"/>
 <link rel="icon" href="/favicon.ico">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
 <link rel="stylesheet" href="styles.css">
 
+<style>
+  /* Estilos adicionales específicos para la sección de contacto */
+  .contact-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 150px 0 80px 0;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: stretch; /* Para que ambas columnas tengan la misma altura visual */
+  }
 
+  .map-container {
+    width: 100%;
+    min-height: 450px;
+    height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 50px 40px;
+    border-radius: 16px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact-info-list {
+    margin: 30px 0;
+  }
+
+  .contact-info-list p {
+    color: #f1f1f1;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .contact-info-list i {
+    color: #fff; /* Iconos en blanco */
+    font-size: 1.3rem;
+    width: 25px;
+    text-align: center;
+  }
+
+  .email-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    background: #fff; /* Fondo blanco */
+    color: #0b1220; /* Texto oscuro */
+    border: 1px solid #fff; /* Borde blanco */
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none; /* Quitar subrayado del enlace */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+  }
+
+  .email-btn i {
+    color: #0b1220; /* Icono del botón oscuro por defecto */
+    transition: all 0.3s ease;
+  }
+
+  .email-btn:hover {
+    background: transparent;
+    color: #fff;
+  }
+
+  .email-btn:hover i {
+    color: #fff; /* Al pasar el ratón, el icono se vuelve blanco */
+  }
+
+  /* Responsive para móviles */
+  @media (max-width: 900px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .contact-section {
+      padding-top: 120px;
+    }
+    .map-container {
+      min-height: 300px;
+      /* En móviles, es mejor que el mapa vaya debajo de la información, 
+         así que cambiamos el orden visual */
+      order: 2; 
+    }
+    .glass-panel {
+      order: 1;
+    }
+  }
 </style>
-
-
 </head>
 
 <body>
@@ -39,10 +145,9 @@
           <a href="ferfil.html">Ferfil</a>
           <a href="services.html">Services</a>
           <a href="about.html">About Us</a>
-          <a href="contact.html">Contact</a>
-          <a href="https://drive.google.com/file/d/1WoMRmmUtPPjQzyLjRYjJHznSljWQ4U9n/view?usp=drive_link" class="catalogue-btn">Catalogue</a>
+          <a href="contact.html" style="color: #fff;">Contact</a>
+          <a href="https://drive.google.com/file/d/1WoMRmmUtPPjQzyLjRYjJHznSljWQ4U9n/view?usp=drive_link" class="catalogue-btn" target="_blank">Catalogue</a>
 
-          <!-- LANGUAGE SELECTOR DESKTOP -->
           <div class="language-selector-desktop">
             <button id="langBtn">EN ▼</button>
             <ul id="langMenu" class="lang-menu">
@@ -52,7 +157,6 @@
             </ul>
           </div>
 
-          <!-- LANGUAGE SELECTOR MOBILE -->
           <div class="language-selector-mobile">
             <button class="lang-mobile">EN</button>
             <button class="lang-mobile">ES</button>
@@ -70,67 +174,40 @@
   </div>
 </header>
 
-
-  <!------------------------- HTML SECCIÓN ESPECIFICA----------------------------------->
-<video class="contact-bg-video" autoplay muted loop playsinline>
+<video class="contact-bg-video" autoplay muted loop playsinline style="position:fixed; top:0; left:0; width:100vw; height:100vh; object-fit:cover; z-index:-2;">
   <source src="index1.mp4" type="video/mp4">
 </video>
-<div class="contact-video-overlay"></div>
+<div class="contact-video-overlay" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(11, 18, 32, 0.7); z-index:-1;"></div>
 
-
-<section class="section" style="min-height:50vh; display:flex; align-items:center; padding-top: 120px;">
+<section class="section contact-section">
   <div class="container">
-    <div class="grid-2">
+    <div class="contact-grid">
 
-      <!-- LEFT: INFO -->
-      <div>
-        <h1 style="color:#fff">Contact</h1>
-
-        <p style="margin-bottom:20px; color:#fff">
-          <strong>Ibercutelarias, Lda</strong><br>
-          R. da Gandra 1782<br>
-          4805-537 Barco, Portugal
-        </p>
-
-        <p style="margin-bottom:20px; color:#fff">
-          Phone: +351 253 579 523<br>
-          Email: geral@ibercutlery.com
-        </p>
-
-        <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:30px;">
-
-          <a href="mailto:geral@ibercutlery.com" class="btn">
-            Send Email
-          </a>
-
-        </div>
-      </div>
-
-      <!-- RIGHT: MAP -->
-      <div class="map-container full-width">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d305.0527108684976!2d-8.333752235558503!3d41.50752905274157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24ff2a8b708927%3A0xd942fa0aa73b4154!2sIbercutelarias%2C%20Lda!5e0!3m2!1ses!2spt!4v1708738654321!5m2!1ses!2spt"
-          width=" 1000"
-          height="1000"
-          style="border:0;"
-          allowfullscreen=""
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7106.190392861869!2d-8.332282410886643!3d41.50893344808778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24ff2a8b708927%3A0xd942fa0aa73b4154!2sIbercutelarias%2C%20Lda!5e0!3m2!1ses!2ses!4v1773135462579!5m2!1ses!2ses" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
           loading="lazy">
         </iframe>
       </div>
 
+      <div class="glass-panel">
+        <h1 style="color:#fff; font-size: 3rem; margin-bottom: 10px;">Get in Touch</h1>
+        <p style="color:#ddd; line-height: 1.6;">Have a question about our collections or a B2B inquiry? Contact our team directly.</p>
+
+        <div class="contact-info-list">
+          <p><i class="fas fa-map-marker-alt"></i> <span>Ibercutelarias, Lda. R. da Gandra 1782 4805-537 Barco, Portugal</span></p>
+          <p><i class="fas fa-phone-alt"></i> +351 253 579 523</p>
+          <p><i class="fas fa-envelope"></i> geral@ibercutelarias.com</p>
+        </div>
+                <a href="mailto:geral@ibercutelarias.com" class="btn" data-i18n="btn_services" style="text-align: center;">Send Email</a>
+      </div>
     </div>
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-
 
 <footer>
   <div class="container footer-grid">
@@ -146,7 +223,6 @@
     </div>
 
     <div>
-      
       <h3>Follow Us</h3>
       <br>
       <div class="footer-social">
@@ -230,18 +306,6 @@ document.addEventListener('click', () => { langMenu.style.display = 'none'; });
 
 /* ================= COPYRIGHT YEAR ================= */
 document.getElementById("copyright-year").textContent = new Date().getFullYear();
-
-
-
-
-
-  
-
-
-
-/* ================= JS ESPECIFICO ================= */
-
-
 
 </script>
 
