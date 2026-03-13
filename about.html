@@ -12,6 +12,61 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <link rel="stylesheet" href="styles.css">
+
+<style>
+  /* --- NUEVOS ESTILOS PARA LA SECCIÓN HERO --- */
+  .value-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+  .hero-section {
+    position: relative;
+    min-height: 80vh; /* Altura considerable para lucir la foto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(11, 18, 32, 0.7), rgba(11, 18, 32, 0.7)), url('fabrica.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto Parallax opcional */
+    color: #ffffff;
+    text-align: center;
+    padding: 140px 20px 80px;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    z-index: 2;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .hero-content .muted {
+    color: #cbd5e0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e2e8f0;
+  }
+
+  /* Ajuste para dispositivos móviles */
+  @media (max-width: 768px) {
+    .hero-content h1 { font-size: 2.5rem; }
+    .hero-section { background-attachment: scroll; } /* Mejor rendimiento en móviles */
+  }
+</style>
 </head>
 
 <body>
@@ -21,12 +76,9 @@
     <div class="container">
       <nav>
         <div class="logo"><a href="index.html"><img src="logoIBERsolo.png" alt="Iber Cutlery Logo"></a></div>
-
         <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
-
         <div class="nav-links" id="navLinks">
           <div class="close-menu" id="closeMenu"><i class="fas fa-times"></i></div>
-
           <a href="index.html">Home</a>
           <a href="meetdart.html">D'Art</a>
           <a href="ferfil.html">Ferfil</a>
@@ -54,67 +106,76 @@
             <a href="https://www.facebook.com/ibercutlery" target="_blank"><i class="fab fa-facebook-f"></i></a>
             <a href="https://www.instagram.com/ibercutlery/" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
-
         </div>
       </nav>
     </div>
   </div>
 </header>
 
-<section class="section" style="padding: 140px 0 80px;">
-  <div class="container grid-2">
-    <div>
-      <div class="muted">Made in Portugal</div>
+<section class="hero-section">
+  <div class="container hero-content">
+      <div class="muted">Since 1998</div>
       <h1>A Legacy of Craftsmanship</h1>
-      <p style="text-align: justify;">
-        For years, Iber Cutlery has stood at the intersection of traditional craftsmanship and modern industrial precision. Headquartered in Braga, the historical heart of Portugal's manufacturing region, we have built our reputation on designing, developing, and producing flatware that meets the highest global standards.
+      <p>
+        Since 1998, Iber Cutlery has been a trusted name at the crossroads of Portugal's traditional cutlery heritage and modern industrial precision. Headquartered in Braga, in the heart of northern Portugal's manufacturing region, our roots trace back to Guimarães – Barco, an area renowned for generations of skilled metalworkers and cutlery expertise dating back centuries.
         <br><br>
-        We are not just manufacturers; we are engineers, designers, and artisans. From the initial conceptual sketch to the final polished piece, every step of our process is driven by an unyielding dedication to quality. Our state-of-the-art facilities allow us to scale production for large B2B clients without ever losing the meticulous touch of traditional Portuguese cutlery making.
+        We are more than manufacturers—we are a team of engineers, designers, and artisans with decades of hands-on experience in the industry.
       </p>
-    </div>
-    <div class="image-wrapper">
-      <img src="factory.jpg" alt="Iber Cutlery Manufacturing Facility">
-    </div>
   </div>
 </section>
 
-<section class="section" style="background-color: #f9f9f9; padding: 80px 0;">
+<hr>
+
+<section class="section" style="background-color: #f9f9f9;">
   <div class="container">
     <div class="muted" style="text-align: center;">Our Philosophy</div>
-    <h2 style="text-align: center;">The Pillars of Iber Cutlery</h2>
+    <h1 style="text-align: center;">The Pillars of Iber Cutlery</h1>
     <br>
     <div class="grid-3 values">
       <div class="card" style="padding: 30px;">
         <h3><i class="fas fa-hammer" style="margin-right: 10px; color: #555;"></i> Heritage</h3>
         <p>
           Deeply rooted in Portugal's rich industrial history, we honor generations of metallurgical expertise. Our heritage informs our work ethic, ensuring that every collection we produce carries a legacy of durability and timeless design.
-        </p>
+        </p><br>
+        <div class="value-image">
+        <img src="fabrica1.png" alt="Traditional Metallurgy">
+      </div>
       </div>
       <div class="card" style="padding: 30px;">
         <h3><i class="fas fa-cogs" style="margin-right: 10px; color: #555;"></i> Innovation</h3>
         <p>
           Tradition meets technology. By integrating advanced PVD coating capabilities, in-house mold creation, and highly efficient industrial scaling, we bring modern, resilient, and cutting-edge solutions to the global hospitality and retail markets.
         </p>
+        <br>
+        <div class="value-image">
+        <img src="fabrica2.png" alt="Traditional Metallurgy">
+      </div>
       </div>
       <div class="card" style="padding: 30px;">
         <h3><i class="fas fa-handshake" style="margin-right: 10px; color: #555;"></i> Partnership</h3>
         <p>
           We operate as an extension of your brand. We offer unlimited flexibility in custom engraving, bespoke material selection, and packaging, ensuring the final product perfectly aligns with your specific B2B needs and brand identity.
         </p>
+        <br>
+        <div class="value-image">
+        <img src="fabrica3.png" alt="Traditional Metallurgy">
+      </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" style="padding: 80px 0; text-align: center;">
+<hr>
+
+<section class="section" style="text-align: center;">
   <div class="container">
-    <h2>Ready to start your next collection?</h2>
+    <h1>Ready to start your next collection?</h1>
     <p style="max-width: 600px; margin: 0 auto 30px; color: #555;">
       Whether you need a fully customized product line developed from scratch or a reliable manufacturing partner to scale your existing designs, our team is ready to help.
     </p>
     <div class="actions" style="justify-content: center;">
       <a href="contact.html" class="btn" style="border-color:#111; color:#111;">Contact Our Team</a>
-      <a href="https://drive.google.com/file/d/1WoMRmmUtPPjQzyLjRYjJHznSljWQ4U9n/view?usp=drive_link" class="btn" style="background:#111; color:#fff; border-color:#111;">Download Catalogue</a>
+      <a href="https://drive.google.com/file/d/1WoMRmmUtPPjQzyLjRYjJHznSljWQ4U9n/view?usp=drive_link" class="btn" style="background:#ffffff00; color:#000000; border-color:#111;">Download Catalogue</a>
     </div>
   </div>
 </section>
@@ -125,13 +186,11 @@
       <div class="footer-logo"><img src="logoIBER-blanco.png" alt="Iber Cutlery"></div>
       <div class="footer-about">Precision and tradition in cutlery manufacturing. Headquartered in Braga, Portugal.</div>
     </div>
-
     <div>
       <h3>Contact</h3> <br>
       <p>R. da Gandra 1782, 4805-537 Barco, Portugal</p>
       <p>+351 253 579 523</p>
     </div>
-
     <div>
       <h3>Follow Us</h3>
       <br>
@@ -144,7 +203,6 @@
       </div>
     </div>
   </div>
-
   <div class="footer-legal">
     <p>© <span id="copyright-year">2025</span> Iber Cutlery · All rights reserved</p>
     <img src="logos_2020.png" style="height:55px;cursor:pointer;" onclick="window.open('Ficha-do-Proyecto-Iber.pdf','_blank')">
@@ -160,11 +218,9 @@
 </div>
 
 <script>
-/* ================= HEADER SCROLL ================= */
 const headerBar = document.getElementById('headerBar');
 window.addEventListener('scroll', () => { headerBar.classList.toggle('scrolled', window.scrollY > 60); });
 
-/* ================= MOBILE MENU ================= */
 const toggle = document.getElementById('menuToggle');
 const nav = document.getElementById('navLinks');
 const closeBtn = document.getElementById('closeMenu');
@@ -179,48 +235,28 @@ closeBtn.addEventListener('click', () => {
   document.body.classList.remove('no-scroll');
 });
 
-document.addEventListener('click', (e) => {
-  if(!nav.contains(e.target) && !toggle.contains(e.target)){
-    nav.classList.remove('active');
-    document.body.classList.remove('no-scroll');
-  }
-});
-
-/* ================= COOKIES ================= */
 const cookiePopup = document.getElementById('cookiePopup');
-
 if(!localStorage.getItem('cookieChoice')){
   cookiePopup.style.display = 'flex';
 }
-
 document.getElementById('acceptCookies').onclick = () => {
   localStorage.setItem('cookieChoice','accepted');
   cookiePopup.style.display = 'none';
 };
-
 document.getElementById('rejectCookies').onclick = () => {
   localStorage.setItem('cookieChoice','rejected');
   cookiePopup.style.display = 'none';
 };
 
-/* ================= LANGUAGE DROPDOWN DESKTOP ================= */
 const langBtn = document.getElementById('langBtn');
 const langMenu = document.getElementById('langMenu');
-
 langBtn.addEventListener('click', (e) => {
   e.stopPropagation();
   langMenu.style.display = (langMenu.style.display === 'block') ? 'none' : 'block';
 });
-
 document.addEventListener('click', () => { langMenu.style.display = 'none'; });
 
-/* ================= COPYRIGHT YEAR ================= */
 document.getElementById("copyright-year").textContent = new Date().getFullYear();
-
-/* ================= LAZY LOAD IMAGES ================= */
-document.querySelectorAll('.image-wrapper img').forEach(img => {
-    img.loading = 'lazy';
-});
 </script>
 
 </body>
