@@ -288,7 +288,7 @@ modal.addEventListener("click", (e) => {
   }
 });
 
-/* ================= SCROLL ANIMATIONS ================= */
+/* ================= SCROLL ANIMATIONS (CON CARGA DE IMÁGENES) ================= */
 const observerOptions = {
   root: null,
   rootMargin: '0px',
@@ -298,9 +298,38 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      // Deja de observar el elemento una vez que ya es visible
-      observer.unobserve(entry.target);
+      const target = entry.target;
+      
+      // 1. Buscamos si el elemento es una imagen o si tiene imágenes dentro
+      const images = target.tagName === 'IMG' ? [target] : Array.from(target.querySelectorAll('img'));
+
+      if (images.length > 0) {
+        // 2. Si hay imágenes, creamos una "espera" (Promise) para cada una
+        const imagePromises = images.map(img => {
+          return new Promise((resolve) => {
+            // Si la imagen ya está en caché y cargada, avanzamos
+            if (img.complete) {
+              resolve(); 
+            } else {
+              // Si no, esperamos a que termine de cargar (o dé error para que no se quede bloqueada)
+              img.addEventListener('load', resolve);
+              img.addEventListener('error', resolve); 
+            }
+          });
+        });
+
+        // 3. Cuando TODAS las imágenes del bloque estén listas, aplicamos la clase
+        Promise.all(imagePromises).then(() => {
+          target.classList.add('is-visible');
+        });
+
+      } else {
+        // 4. Si es solo texto u otro elemento sin imágenes, lo animamos al instante
+        target.classList.add('is-visible');
+      }
+      
+      // Dejamos de observar para que la animación solo ocurra una vez
+      observer.unobserve(target);
     }
   });
 }, observerOptions);
