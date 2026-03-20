@@ -13,6 +13,29 @@
 
 <link rel="stylesheet" href="styles.css">
 
+<style>
+  /* ================= SMOOTH ANIMATIONS CSS ================= */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Retrasos escalonados para las cajas de información */
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.3s; }
+  .delay-3 { transition-delay: 0.5s; }
+</style>
+
 </head>
 
 <body>
@@ -36,7 +59,6 @@
           <a href="contact.html">Contact</a>
           <a href="https://drive.google.com/file/d/1WoMRmmUtPPjQzyLjRYjJHznSljWQ4U9n/view?usp=drive_link" class="catalogue-btn">Catalogue</a>
 
-          <!-- LANGUAGE SELECTOR DESKTOP -->
           <div class="language-selector-desktop">
             <button id="langBtn">EN ▼</button>
             <ul id="langMenu" class="lang-menu">
@@ -69,7 +91,7 @@
   </video>
 
   <div class="overlay">
-    <div class="hero-inner">
+    <div class="hero-inner animate-on-scroll">
       <div class="logo-hero"><img src="logoIBER-blanco.webp" alt="Iber Cutlery Logo"></div>
       <h1 data-i18n="hero-title">Cutlery Manufacturing Solutions</h1>
       <p class="lead" data-i18n="hero_lead">Engineering excellence from Portugal to the world.</p>
@@ -83,11 +105,11 @@
 
 <section class="white-section">
   <br>
-  <h1 data-i18n="ourexpertise">European Expertise</h1>
-  <p data-i18n="ourexpertise_text">Iber Cutlery combines artisanal craftsmanship with advanced technology to deliver premium-quality cutlery. With decades of experience, our products represent the perfect harmony of innovation, design, and Portuguese tradition.</p>
+  <h1 data-i18n="ourexpertise" class="animate-on-scroll">European Expertise</h1>
+  <p data-i18n="ourexpertise_text" class="animate-on-scroll">Iber Cutlery combines artisanal craftsmanship with advanced technology to deliver premium-quality cutlery. With decades of experience, our products represent the perfect harmony of innovation, design, and Portuguese tradition.</p>
   
   <div class="box-grid">
-  <div class="info-box" style="background-image:url('dartmodel.jpg');">
+  <div class="info-box animate-on-scroll delay-1" style="background-image:url('dartmodel.jpg');">
     <div class="info-content">
       <br>
       <h3>Our Brand</h3><br>
@@ -100,7 +122,7 @@
     </div>
   </div>
 
-  <div class="info-box" style="background-image:url('custom.webp');">
+  <div class="info-box animate-on-scroll delay-2" style="background-image:url('custom.webp');">
     <div class="info-content">
       <br><h3>Multiple Finishes</h3><br>
       <p style ="text-align: left;">
@@ -111,7 +133,7 @@
     </div>
   </div>
 
-  <div class="info-box" style="background-image:url('img.png');">
+  <div class="info-box animate-on-scroll delay-3" style="background-image:url('img.png');">
     <div class="info-content">
       <br><h3>Tailored Solutions</h3><br>
       <p style ="text-align: left;">
@@ -123,20 +145,17 @@
   </div>
 </div>
 
-
-
-
 </section>
 
 <section class="white-section">
-  <h2>Trusted by Professionals Worldwide</h2>
-  <p>
+  <h2 class="animate-on-scroll">Trusted by Professionals Worldwide</h2>
+  <p class="animate-on-scroll">
     Distributors, hospitality groups, and tableware brands already rely on Iber Cutlery. Looking for a reliable manufacturing partner or want to develop your own exclusive collection?
     <br><br>
      Our team is ready to assist you.
   </p>
 
-  <div class="actions" style="margin-top:30px;">
+  <div class="actions animate-on-scroll" style="margin-top:30px;">
     <a href="contact.html" class="btn" style="border-color:#111;color:#111;">Contact Us</a>
     <a href="https://drive.google.com/file/d/1WoMRmmUtPPjQzyLjRYjJHznSljWQ4U9n/view?usp=drive_link" class="btn" style="border-color:#111;color:#111;">Explore Catalogue</a>
   </div>
@@ -241,15 +260,26 @@ document.addEventListener('click', () => { langMenu.style.display = 'none'; });
 /* ================= COPYRIGHT YEAR ================= */
 document.getElementById("copyright-year").textContent = new Date().getFullYear();
 
+/* ================= SCROLL ANIMATIONS ================= */
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
 
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      // Deja de observar el elemento una vez que ya es visible (la animación ocurre solo una vez)
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
 
-
-
-
-
-
-
-
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+  observer.observe(el);
+});
 
 </script>
 

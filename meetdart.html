@@ -13,7 +13,28 @@
 
 <link rel="stylesheet" href="styles.css">
 
+<style>
+  /* ================= SMOOTH ANIMATIONS CSS ================= */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
+  /* Retrasos escalonados por si decides usarlos más adelante */
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.3s; }
+  .delay-3 { transition-delay: 0.5s; }
+</style>
 
 </head>
 
@@ -38,7 +59,6 @@
           <a href="contact.html">Contact</a>
           <a href="https://drive.google.com/file/d/1WoMRmmUtPPjQzyLjRYjJHznSljWQ4U9n/view?usp=drive_link" class="catalogue-btn">Catalogue</a>
 
-          <!-- LANGUAGE SELECTOR DESKTOP -->
           <div class="language-selector-desktop">
             <button id="langBtn">EN ▼</button>
             <ul id="langMenu" class="lang-menu">
@@ -48,7 +68,6 @@
             </ul>
           </div>
 
-          <!-- LANGUAGE SELECTOR MOBILE -->
           <div class="language-selector-mobile">
             <button class="lang-mobile">EN</button>
             <button class="lang-mobile">ES</button>
@@ -72,29 +91,21 @@
   </video>
 
   <div class="overlay">
-    <div class="hero-inner">
+    <div class="hero-inner animate-on-scroll">
       <div class="logo-hero"><img src="logodart.webp" alt="D'Art Logo"></div>
       <p class="lead" data-i18n="hero_lead">Peak of portuguese craftsmanship.</p>
       <div class="actions">
         <a href="meetdart.html#collections" class="btn" data-i18n="btn_catalogue">Collections</a>
         <a href="services.html#acabados" class="btn" data-i18n="btn_services">Finishes</a>
           <a href="careuse.html" class="btn" data-i18n="btn_services">Care & Use</a>
-
       </div>
     </div>
   </div>
 </section>
 
-
-        
-
-
-
-  <!------------------------- HTML SECCIÓN DART----------------------------------->
-<!-- ================= DART PRESENTATION ================= -->
 <section class="dart-section"  id="introdart">
   <div class="container-narrow">
-    <p class="dart-text">
+    <p class="dart-text animate-on-scroll">
       D'Art is Iber Cutlery’s signature collection — a statement of contemporary elegance shaped by Portuguese craftsmanship.
       Designed for refined tables and demanding hospitality environments. 
       <br><br>
@@ -103,10 +114,6 @@
   </div>
 </section>
 
-
-
-
-<!-- ================= MODEL GALLERY ================= -->
 <section class="dart-gallery" id="collections">
   <div class="container-narrow">
     <h1 class="dart-title" >Collections</h1>
@@ -114,47 +121,39 @@
 
   <div class="gallery-grid">
 
-<div class="gallery-item" 
-     onclick="openModal('img.png','Model One','Descripción del modelo uno')">
-  <img src="img.png" alt="">
-  <div class="gallery-label">Model One</div>
-</div>
+    <div class="gallery-item" onclick="openModal('img.png','Model One','Descripción del modelo uno')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model One</div>
+    </div>
 
-<div class="gallery-item" 
-     onclick="openModal('img2.png','Model 2','Descripción del 2222 uno')">
-  <img src="img2.png" alt="">
-  <div class="gallery-label">Model 2</div>
-</div>
+    <div class="gallery-item" onclick="openModal('img2.png','Model 2','Descripción del 2222 uno')">
+      <img src="img2.png" alt="">
+      <div class="gallery-label">Model 2</div>
+    </div>
 
-<div class="gallery-item" 
-     onclick="openModal('img.png','Model One','Descripción del modelo uno')">
-  <img src="img.png" alt="">
-  <div class="gallery-label">Model Three</div>
-</div>
+    <div class="gallery-item" onclick="openModal('img.png','Model One','Descripción del modelo uno')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model Three</div>
+    </div>
 
-<div class="gallery-item" 
-     onclick="openModal('img.png','Model One','Descripción del modelo uno')">
-  <img src="img.png" alt="">
-  <div class="gallery-label">Model 323</div>
-</div>
+    <div class="gallery-item" onclick="openModal('img.png','Model One','Descripción del modelo uno')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model 323</div>
+    </div>
 
-<div class="gallery-item" 
-     onclick="openModal('img.png','Model One','Descripción del modelo uno')">
-  <img src="img.png" alt="">
-  <div class="gallery-label">Model 4343</div>
-</div>
+    <div class="gallery-item" onclick="openModal('img.png','Model One','Descripción del modelo uno')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model 4343</div>
+    </div>
 
-<div class="gallery-item" 
-     onclick="openModal('img.png','Model One','Descripción del modelo uno')">
-  <img src="img.png" alt="">
-  <div class="gallery-label">Model 5</div>
-</div>
+    <div class="gallery-item" onclick="openModal('img.png','Model One','Descripción del modelo uno')">
+      <img src="img.png" alt="">
+      <div class="gallery-label">Model 5</div>
+    </div>
 
   </div>
 </section>
 
-
-<!-- ================= MODAL ================= -->
 <div id="modelModal" class="model-modal">
   <div class="model-content">
     <span class="close-modal" onclick="closeModal()">✕</span>
@@ -166,18 +165,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <footer>
   <div class="container footer-grid">
@@ -278,19 +265,8 @@ document.addEventListener('click', () => { langMenu.style.display = 'none'; });
 /* ================= COPYRIGHT YEAR ================= */
 document.getElementById("copyright-year").textContent = new Date().getFullYear();
 
-
-
-
-
-  
-
-
-
 /* ================= JS DART ================= */
-
-
 function openModal(image, title, description) {
-
   document.getElementById("modalImage").src = image;
   document.getElementById("modalTitle").textContent = title;
   document.getElementById("modalDescription").textContent = description;
@@ -304,15 +280,34 @@ function closeModal() {
   document.body.classList.remove("no-scroll");
 }
 
-
 // Cerrar modal al pulsar fuera del contenido
 const modal = document.getElementById("modelModal");
 modal.addEventListener("click", (e) => {
-  if(e.target === modal){  // Solo si clic fuera del contenido
+  if(e.target === modal){ 
     closeModal();
   }
 });
 
+/* ================= SCROLL ANIMATIONS ================= */
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      // Deja de observar el elemento una vez que ya es visible
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+  observer.observe(el);
+});
 </script>
 
 </body>

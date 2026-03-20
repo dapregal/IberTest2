@@ -11,10 +11,32 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
 <link rel="stylesheet" href="styles.css">
 
+<style>
+  /* ================= SMOOTH ANIMATIONS CSS ================= */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
+  /* Retrasos escalonados para las cajas de información / tarjetas */
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.3s; }
+  .delay-3 { transition-delay: 0.5s; }
+  .delay-4 { transition-delay: 0.7s; }
+  .delay-5 { transition-delay: 0.9s; }
+</style>
 
 </head>
 
@@ -40,7 +62,6 @@
           <a href="contact.html">Contact</a>
           <a href="https://drive.google.com/file/d/1WoMRmmUtPPjQzyLjRYjJHznSljWQ4U9n/view?usp=drive_link" class="catalogue-btn">Catalogue</a>
 
-          <!-- LANGUAGE SELECTOR DESKTOP -->
           <div class="language-selector-desktop">
             <button id="langBtn">EN ▼</button>
             <ul id="langMenu" class="lang-menu">
@@ -50,7 +71,6 @@
             </ul>
           </div>
 
-          <!-- LANGUAGE SELECTOR MOBILE -->
           <div class="language-selector-mobile">
             <button class="lang-mobile">EN</button>
             <button class="lang-mobile">ES</button>
@@ -74,127 +94,93 @@
   </video>
 
   <div class="overlay">
-    <div class="hero-inner">
-  <h1>Our facilities, <br> your competitive advantage </h1>
-  
-  <p class="lead" data-i18n="hero_lead">Create your own models from scratch or choose from a wide range of our models.</p>
-  
-  <div class="actions">
-    <a href="services.html#custom" class="btn" data-i18n="btn_custom_models">Create my Model</a>
-    <a href="meetdart.html" class="btn" data-i18n="btn_standard_models">Discover D'Art</a>
+    <div class="hero-inner animate-on-scroll">
+      <h1>Our facilities, <br> your competitive advantage </h1>
+      
+      <p class="lead" data-i18n="hero_lead">Create your own models from scratch or choose from a wide range of our models.</p>
+      
+      <div class="actions">
+        <a href="services.html#custom" class="btn" data-i18n="btn_custom_models">Create my Model</a>
+        <a href="meetdart.html" class="btn" data-i18n="btn_standard_models">Discover D'Art</a>
         <a href="ferfil.html" class="btn" data-i18n="btn_standard_models">Discover Ferfil</a>
-
-  </div>
-</div>
+      </div>
+    </div>
   </div>
 </section>
 
-
-        
-
-  <!------------------------- HTML SECCIÓN ESPECIFICA----------------------------------->
-<!-- SERVICES / CAPABILITIES -->
- 
-<section class="section" style= "padding: 100px 0;" id="custom">
+  <section class="section" style="padding: 100px 0;" id="custom">
   <div class="container grid-2">
     <div>
-            <h1 >Custom Cutlery Solutions</h1>
+      <h1 class="animate-on-scroll">Custom Cutlery Solutions</h1>
 
-      <div class="muted">Unlimited Flexibility</div>
-      <p style="text-align: justify;">
-At Iber Cutlery, we are more than a supplier — we are your manufacturing partner.
-<br>
-<br>
-We specialize in the development and large-scale production of fully customized cutlery collections, engineered to meet the exact specifications of each client. Flexibility is our strength.
-     <br><br> Our development process begins with your idea.
-
+      <div class="muted animate-on-scroll">Unlimited Flexibility</div>
+      <p style="text-align: justify;" class="animate-on-scroll">
+        At Iber Cutlery, we are more than a supplier — we are your manufacturing partner.
+        <br><br>
+        We specialize in the development and large-scale production of fully customized cutlery collections, engineered to meet the exact specifications of each client. Flexibility is our strength.
+        <br><br> Our development process begins with your idea.
       </p>
-      <p style="text-align: justify;">
 
-
-  <div class="process-container">
-        
-    <p class="intro">
-    </p>
-
-    <div class="process-steps">
-      <div class="step">Complete model development from scratch</div>
-      <div class="step">Technical design and prototyping</div>
-      <div class="step">In-house mold creation</div>
-      <div class="step">Engineering validation</div>
-      <div class="step">Industrial scaling</div>
+      <div class="process-container">
+        <div class="process-steps">
+          <div class="step animate-on-scroll delay-1">Complete model development from scratch</div>
+          <div class="step animate-on-scroll delay-2">Technical design and prototyping</div>
+          <div class="step animate-on-scroll delay-3">In-house mold creation</div>
+          <div class="step animate-on-scroll delay-4">Engineering validation</div>
+          <div class="step animate-on-scroll delay-5">Industrial scaling</div>
+        </div>
+      </div>
     </div>
-
     
-  </div>
-    </div>
-    <div class="image-wrapper">
+    <div class="image-wrapper animate-on-scroll">
       <img src="factory.webp" alt="Custom Cutlery Services">
     </div>
   </div>
 
+<br><hr><br>
 
-
-
-
-<br><hr>
-<br>
-
-   <div class="container">
-    <div class="muted">Customization</div>
-    <h2>Tailored to Your Needs</h2>
+  <div class="container">
+    <div class="muted animate-on-scroll">Customization</div>
+    <h2 class="animate-on-scroll">Tailored to Your Needs</h2>
     <div class="grid-3 values">
-      <div class="card">
+      <div class="card animate-on-scroll delay-1">
         <h3>Engraving & Branding</h3>
         <p>
           Custom laser engraving, embossed logos, and bespoke branding options are available for every product, ensuring your identity is seamlessly integrated.
         </p>
       </div>
-      <div class="card">
+      <div class="card animate-on-scroll delay-2">
         <h3>Material Selection</h3>
         <p>
-
-<b>AISI 304 -</b>
-Premium austenitic steel with superior corrosion resistance and higher nickel content. Ideal for high-end hospitality, fine dining, and premium retail markets.<br><br>
-
-<b>AISI 430 -   </b>
-Ferritic stainless steel offering excellent durability and cost-efficiency. A reliable solution for large-scale hospitality, institutional, and high-rotation environments.
+          <b>AISI 304 -</b> Premium austenitic steel with superior corrosion resistance and higher nickel content. Ideal for high-end hospitality, fine dining, and premium retail markets.<br><br>
+          <b>AISI 430 -</b> Ferritic stainless steel offering excellent durability and cost-efficiency. A reliable solution for large-scale hospitality, institutional, and high-rotation environments.
+        </p>
       </div>
-      <div class="card">
+      <div class="card animate-on-scroll delay-3">
         <h3>Packaging Solutions</h3>
         <p>
-
-Presentation is part of the product. <br><br> We provide: Tailor-made packaging design, branded boxes, hospitality-ready bulk solutions, retail-ready presentation formats, each packaging solution is developed to align with your brand positioning and distribution strategy.        </p>
+          Presentation is part of the product. <br><br> We provide: Tailor-made packaging design, branded boxes, hospitality-ready bulk solutions, retail-ready presentation formats, each packaging solution is developed to align with your brand positioning and distribution strategy.
+        </p>
       </div>
     </div>
   </div>
 
-<br>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<br>
+<br><br><br><hr><br><br><br>
 
   <div class="container grid-2">
     <div>
-      <h1  id="acabados">Multiple Finishes</h1>
+      <h1 id="acabados" class="animate-on-scroll">Multiple Finishes</h1>
     </div>
-
     <div>
-            <div class="muted">THE IBER TOUCH</div>
-
-       <p style="text-align: justify;">
+      <div class="muted animate-on-scroll">THE IBER TOUCH</div>
+      <p style="text-align: justify;" class="animate-on-scroll">
         Surface identity defines character. That is why we developed our own distinctive finishing concepts. <br><br>
       </p>
     </div>
-
   </div>
 
   <div class="finish-grid">
-
-    <div class="finish-card">
+    <div class="finish-card animate-on-scroll delay-1">
       <img src="img.png" alt="">
       <div class="finish-overlay">
         <h3>Brilho</h3> <br>
@@ -202,7 +188,7 @@ Presentation is part of the product. <br><br> We provide: Tailor-made packaging 
       </div>
     </div>
 
-    <div class="finish-card">
+    <div class="finish-card animate-on-scroll delay-2">
       <img src="img.png" alt="">
       <div class="finish-overlay">
         <h3>Areia</h3><br>
@@ -210,7 +196,7 @@ Presentation is part of the product. <br><br> We provide: Tailor-made packaging 
       </div>
     </div>
 
-    <div class="finish-card">
+    <div class="finish-card animate-on-scroll delay-3">
       <img src="img.png" alt="">
       <div class="finish-overlay">
         <h3>Fosco</h3><br>
@@ -218,7 +204,7 @@ Presentation is part of the product. <br><br> We provide: Tailor-made packaging 
       </div>
     </div>
 
-    <div class="finish-card">
+    <div class="finish-card animate-on-scroll delay-4">
       <img src="img.png" alt="">
       <div class="finish-overlay">
         <h3>Pedras</h3><br>
@@ -227,75 +213,48 @@ Presentation is part of the product. <br><br> We provide: Tailor-made packaging 
     </div>
   </div>
 
-<br>
-<br>
+<br><br>
 
-<div class="container grid-2">
+  <div class="container grid-2">
     <div>
-               <div class="muted">Coating Technology</div>
-
-      <h1>PVD Technology</h1>
-
-       <p style="text-align: justify;">
-        PVD (Physical Vapor Deposition) technolog is a state-of-the-art surface treatment that allows us to apply a wide range of durable and decorative finishes. PVD coating not only enhances the aesthetic appeal of each piece but also increases scratch resistance, corrosion protection, and overall longevity.<br><br>
-Thanks to PVD, we offer virtually infinite possibilities for combining colors, textures, and finishes. Traditional finishes can be enriched with luxurious PVD tones such as Gold, Champagne, Copper, Anthracite, and Blue. This enables custom-tailored designs that perfectly align with client specifications, from subtle elegance to bold statement pieces.<br><br>
+      <div class="muted animate-on-scroll">Coating Technology</div>
+      <h1 class="animate-on-scroll">PVD Technology</h1>
+      <p style="text-align: justify;" class="animate-on-scroll">
+        PVD (Physical Vapor Deposition) technology is a state-of-the-art surface treatment that allows us to apply a wide range of durable and decorative finishes. PVD coating not only enhances the aesthetic appeal of each piece but also increases scratch resistance, corrosion protection, and overall longevity.<br><br>
+        Thanks to PVD, we offer virtually infinite possibilities for combining colors, textures, and finishes. Traditional finishes can be enriched with luxurious PVD tones such as Gold, Champagne, Copper, Anthracite, and Blue. This enables custom-tailored designs that perfectly align with client specifications, from subtle elegance to bold statement pieces.<br><br>
       </p>
       <div class="process-steps">
-      <div class="step">Complete model development from scratch</div>
-      <div class="step">Technical design and prototyping</div>
-      <div class="step">In-house mold creation</div>
-      <div class="step">Engineering validation</div>
-      <div class="step">Industrial scaling</div>
+        <div class="step animate-on-scroll delay-1">Complete model development from scratch</div>
+        <div class="step animate-on-scroll delay-2">Technical design and prototyping</div>
+        <div class="step animate-on-scroll delay-3">In-house mold creation</div>
+        <div class="step animate-on-scroll delay-4">Engineering validation</div>
+        <div class="step animate-on-scroll delay-5">Industrial scaling</div>
+      </div>
     </div>
-    </div>
-      <div class="image-wrapper">
+    <div class="image-wrapper animate-on-scroll">
       <img src="pvd.webp" alt="Custom Cutlery Services">
     </div>
-    </div>
-
-
   </div>
 
-
-<br>
-<br>
-<br>
-<hr>
-<br>
-<br>
-<br>
-  
-  
-
+<br><br><br><hr><br><br><br>
   
   <div class="container">
-    <div class="muted">Our Approach</div>
-    <h2>Comprehensive End-to-End Solutions</h2>
-    <p style="text-align: justify;">
+    <div class="muted animate-on-scroll">Our Approach</div>
+    <h2 class="animate-on-scroll">Comprehensive End-to-End Solutions</h2>
+    <p style="text-align: justify;" class="animate-on-scroll">
       From initial design concepts to delivery and aftercare, Iber Cutlery offers complete solutions. Our team manages every step of the process, ensuring your vision is perfectly realized.
-    </p>  <br>
+    </p><br>
 
-    <div class="signature">
+    <div class="signature animate-on-scroll">
       Iber Cutlery — Crafting Excellence, Worldwide.
     </div>
   </div>
   <br>
-  <div class="actions">
-    <a href="contact.html" class="btn" style="border-color:#111;color:#111; text-align: center;">Tell us about your proyect</a>
+  <div class="actions animate-on-scroll">
+    <a href="contact.html" class="btn" style="border-color:#111;color:#111; text-align: center;">Tell us about your project</a>
     <a href="https://drive.google.com/file/d/1WoMRmmUtPPjQzyLjRYjJHznSljWQ4U9n/view?usp=drive_link" class="btn" style="border-color:#111;color:#111;text-align: center;">Explore Catalogue</a>
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
 
 <footer>
   <div class="container footer-grid">
@@ -311,7 +270,6 @@ Thanks to PVD, we offer virtually infinite possibilities for combining colors, t
     </div>
 
     <div>
-      
       <h3>Follow Us</h3>
       <br>
       <div class="footer-social">
@@ -396,24 +354,33 @@ document.addEventListener('click', () => { langMenu.style.display = 'none'; });
 /* ================= COPYRIGHT YEAR ================= */
 document.getElementById("copyright-year").textContent = new Date().getFullYear();
 
+/* ================= SCROLL ANIMATIONS ================= */
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
 
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      // Deja de observar el elemento una vez que ya es visible (la animación ocurre solo una vez)
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
 
-
-
-  
-
-
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+  observer.observe(el);
+});
 
 /* ================= JS ESPECIFICO ================= */
-
-
 
 /* Optional: Lazy-load images for performance */
 document.querySelectorAll('.image-wrapper img').forEach(img => {
     img.loading = 'lazy';
 });
-
-
 
 </script>
 

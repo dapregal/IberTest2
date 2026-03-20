@@ -14,6 +14,27 @@
 <link rel="stylesheet" href="styles.css">
 
 <style>
+  /* ================= SMOOTH ANIMATIONS CSS ================= */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Retrasos escalonados para las cajas de información */
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.3s; }
+  .delay-3 { transition-delay: 0.5s; }
+
   /* Estilos adicionales específicos para la sección de contacto */
   .contact-section {
     min-height: 100vh;
@@ -183,7 +204,7 @@
   <div class="container">
     <div class="contact-grid">
 
-      <div class="map-container">
+      <div class="map-container animate-on-scroll delay-1">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7106.190392861869!2d-8.332282410886643!3d41.50893344808778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24ff2a8b708927%3A0xd942fa0aa73b4154!2sIbercutelarias%2C%20Lda!5e0!3m2!1ses!2ses!4v1773135462579!5m2!1ses!2ses" 
           width="100%" 
@@ -194,7 +215,7 @@
         </iframe>
       </div>
 
-      <div class="glass-panel">
+      <div class="glass-panel animate-on-scroll delay-2">
         <h1 style="color:#fff; font-size: 3rem; margin-bottom: 10px;">Get in Touch</h1>
         <p style="color:#ddd; line-height: 1.6;">Have a question about our collections or a B2B inquiry? Contact our team directly.</p>
 
@@ -306,6 +327,27 @@ document.addEventListener('click', () => { langMenu.style.display = 'none'; });
 
 /* ================= COPYRIGHT YEAR ================= */
 document.getElementById("copyright-year").textContent = new Date().getFullYear();
+
+/* ================= SCROLL ANIMATIONS ================= */
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.15
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      // Deja de observar el elemento una vez que ya es visible (la animación ocurre solo una vez)
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.animate-on-scroll').forEach(el => {
+  observer.observe(el);
+});
 
 </script>
 
